@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+    <constant name="struts.enable.DynamicMethodInvocation" value="false" />
+    <constant name="struts.devMode" value="true" />
+
+	<package name="user" extends="struts-default" namespace="/">
+		<action name="add" class="userController" method="add">
+			<result type="freemarker">register.html</result>
+			<result name="error" type="freemarker">error.html</result>
+		</action>
+		
+		<action name="auth" class="authController">
+			<result name="success" type="redirect">logined</result>
+			<result name="error">500.html</result>
+		</action>
+		<action name="logined" class="afterLoginController">
+            <result name="success" type="redirect">/</result>
+            <result name="input" type="redirect">active</result>
+            <result name="error">500.html</result>
+        </action>
+		<action name="login" class="loginController">
+            <result name="success">jsps/login.jsp</result>
+            <result name="error">500.html</result>
+        </action>
+        <action name="active" class="activateController">
+            <result name="success" type="redirect">/</result>
+            <result name="error">500.html</result>
+            <result name="input">jsps/active.jsp</result>
+            <result name="login" type="redirect">login</result>
+        </action>
+        <action name="actived" class="afterActiveController">
+            <result name="success" type="redirect">/</result>
+            <result name="error">500.html</result>
+        </action>
+        <action name="" class="mainpageController">
+            <result name="success">jsps/index.jsp</result>
+            <result name="login" type="redirect">login</result>
+        </action>
+        <action name="allproduct" class="">
+            <result name="success">jsps/product3.jsp</result>
+        </action>
+        <action name="product" class="">
+            <result name="success">jsps/productdetail.jsp</result>
+        </action>
+        <action name="logout" class="logoutController">
+            <result name="success" type="redirect">/</result>
+            <result name="error">500.html</result>
+        </action>
+
+	</package>
+</struts>

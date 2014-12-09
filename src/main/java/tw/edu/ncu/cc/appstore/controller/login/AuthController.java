@@ -1,9 +1,10 @@
-package tw.edu.ncu.cc.appstore.controller;
+package tw.edu.ncu.cc.appstore.controller.login;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.apache.struts2.ServletActionContext;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
@@ -17,18 +18,17 @@ import com.opensymphony.xwork2.ActionSupport;
 public class AuthController extends ActionSupport {
 
     private static final long serialVersionUID = 1L;
-    private HttpServletRequest request;
+    @Autowired
+    private HttpServletRequest request;  
     private String student_id = "";
 
     @Override
     public String execute() throws Exception {
         request = ServletActionContext.getRequest();
-        student_id = request.getParameter("openid.ext1.value.student_id");
-        if (student_id != null && student_id.trim().length() > 0) {
-            if (checkOpenId()) {          
+        student_id = checkOpenId();
+        if (student_id != null && student_id.trim().length() > 0) {               
                 login(student_id);
                 return SUCCESS;
-            }
         }
         return ERROR;
     }
@@ -38,15 +38,17 @@ public class AuthController extends ActionSupport {
         session.setAttribute("tmpId", id);
     }
 
-    private boolean checkOpenId() {
+    private String checkOpenId() {
         try {
             OpenIDManager manager = new OpenIDManager();
-            return manager.checkAuthentication(ServletActionContext
-                    .getRequest().getParameterMap());
+            boolean isChecked = manager.checkAuthentication(request);
+            if(isChecked){
+                return manager.getIdentityID(request);
+            }
         } catch (OpenIDException e) {
             e.printStackTrace();
         }
-        return false;
+        return null;
     }
 
     public String getStudent_id() {

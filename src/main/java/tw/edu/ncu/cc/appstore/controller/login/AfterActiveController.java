@@ -1,6 +1,5 @@
-package tw.edu.ncu.cc.appstore.controller;
+package tw.edu.ncu.cc.appstore.controller.login;
 
-import java.util.Date;
 
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
@@ -13,7 +12,6 @@ import tw.edu.ncu.cc.appstore.entity.Person;
 import tw.edu.ncu.cc.appstore.service.IPersonService;
 import tw.edu.ncu.cc.appstore.util.PersonInfo;
 import tw.edu.ncu.cc.appstore.util.PersonUtil;
-import tw.edu.ncu.cc.appstore.util.SignVersion;
 
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -36,17 +34,11 @@ public class AfterActiveController extends ActionSupport {
         String tmpId=personInfo.getAccount();
         if(tmpId!=null && tmpId.length()>0){
             Person person=service.findPersonByAccount(tmpId);
-            if(person!=null){
-                int version=person.getSign_version();
-                if(version < SignVersion.version){
-                    Date date=new Date();
-                    person.setSign_date(date);
-                    person.setSign_version(SignVersion.version);
+            if(person!=null){               
                     service.save(person); 
                     return SUCCESS;
                 }
-            }
-        }                        
+            }       
         return ERROR;
     }
 }

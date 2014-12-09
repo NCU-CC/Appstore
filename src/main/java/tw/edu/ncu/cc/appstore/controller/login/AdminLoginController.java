@@ -1,4 +1,4 @@
-package tw.edu.ncu.cc.appstore.controller;
+package tw.edu.ncu.cc.appstore.controller.login;
 
 import java.util.Date;
 
@@ -11,54 +11,56 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
 import tw.edu.ncu.cc.appstore.entity.Person;
+import tw.edu.ncu.cc.appstore.entity.PersonType;
 import tw.edu.ncu.cc.appstore.service.IPersonService;
 import tw.edu.ncu.cc.appstore.util.PersonUtil;
-import tw.edu.ncu.cc.appstore.util.SignVersion;
 
 import com.opensymphony.xwork2.ActionSupport;
 
 @Controller
 @Scope("prototype")
-public class AfterLoginController extends ActionSupport {
-
+public class AdminLoginController extends ActionSupport {
     private static final long serialVersionUID = 1L;
+    private static final String adminName="admin";
     private HttpServletRequest request;
-
     private IPersonService<Person> service;
     @Inject
     public void setService(IPersonService<Person> service) {
         this.service = service;
     }
-
+    private String userName;
+    private String userPassword;
     @Override
-    public String execute() throws Exception {
-        request = ServletActionContext.getRequest();
-        HttpSession session=request.getSession();
-        String tmpId=((String) session.getAttribute("tmpId")).trim();
-        if(tmpId!=null && tmpId.length()>0){
+    public String execute() {
+        return LOGIN;
+    }
+    public String login(){
+        request=ServletActionContext.getRequest();
+        Person person= service.findAdminByAccount(adminName);
+        if(person==null){
+            person= new Person();
+            newLogin(person,adminName);
+            person.setPassword(adminName);
+            service.create(person);
+        }
+        
+        Person pp = service.findAdminByAccountAndPassword(userName, userPassword);
+        if(pp!=null){            
+            HttpSession session=request.getSession();
             session.invalidate();
             session=request.getSession(true);
-            
-            Person person= service.findPersonByAccount(tmpId);
-            if(person!=null){
-                notNewLogin(person);
-                service.save(person);
-            }else{
-                person= new Person();
-                newLogin(person,tmpId);
-                service.create(person);
-            }
-            addInSession(person);
-            if(person.getSign_version()<SignVersion.version){
-                return INPUT;
-            }
+            notNewLogin(person);
+            service.save(person);
+            addInSession(person);  
             return SUCCESS;
         }
-        return ERROR;
+        
+        return LOGIN;
     }
     private void addInSession(Person person){
         PersonUtil.setPersonInf(request, person);
     }
+    
     private void newLogin(Person person,String id){
         person.setAccount(id);
         person.setDateCreated(new Date());
@@ -66,11 +68,25 @@ public class AfterLoginController extends ActionSupport {
         person.setDeleted(false);
         person.setIpCreated(request.getRemoteAddr());
         person.setIpLastActived(request.getRemoteAddr());
+        person.setType(PersonType.ADMIN.toString());
     }
     
     private void notNewLogin(Person person){
         person.setDateLastActived(new Date());
         person.setIpLastActived(request.getRemoteAddr());
+    }
+    
+    public String getUserName() {
+        return userName;
+    }
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+    public String getUserPassword() {
+        return userPassword;
+    }
+    public void setUserPassword(String userPassword) {
+        this.userPassword = userPassword;
     }
 
 }

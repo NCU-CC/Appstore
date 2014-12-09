@@ -27,7 +27,7 @@
 									<li class="portfolio-project-name">中央選課一把罩</li>
 									<li>學生相關 & 選課相關</li>
 									<li>作者: 計算機中心</li>
-									<li class="read-more"><a href="product" class="btn">Read more</a></li>
+									<li class="read-more"><a href="productSimple" class="btn">Read more</a></li>
 								</ul>
 							</div>
 						</div>
@@ -42,7 +42,7 @@
 									<li class="portfolio-project-name">中央大學導航系統</li>
 									<li>導覽系統</li>
 									<li>作者: 計算機中心</li>
-									<li class="read-more"><a href="product" class="btn">Read more</a></li>
+									<li class="read-more"><a href="productSimple" class="btn">Read more</a></li>
 								</ul>
 							</div>
 						</div>
@@ -57,7 +57,7 @@
 									<li class="portfolio-project-name">中央大學哇哈哈</li>
 									<li>超強哇哈哈系統</li>
 									<li>作者: 張佳惠教授團隊</li>
-									<li class="read-more"><a href="product" class="btn">Read more</a></li>
+									<li class="read-more"><a href="productSimple" class="btn">Read more</a></li>
 								</ul>
 							</div>
 						</div>
@@ -72,7 +72,7 @@
 									<li class="portfolio-project-name">中央大學ㄨ一ㄨㄚㄚ</li>
 									<li>51522</li>
 									<li>作者: 皮卡丘</li>
-									<li class="read-more"><a href="product" class="btn">Read more</a></li>
+									<li class="read-more"><a href="productSimple" class="btn">Read more</a></li>
 								</ul>
 							</div>
 						</div>
@@ -87,7 +87,7 @@
 									<li class="portfolio-project-name">中央旋風</li>
 									<li>氣象相關</li>
 									<li>作者: 大氣科學系</li>
-									<li class="read-more"><a href="product" class="btn">Read more</a></li>
+									<li class="read-more"><a href="productSimple" class="btn">Read more</a></li>
 								</ul>
 							</div>
 						</div>
@@ -102,7 +102,7 @@
 									<li class="portfolio-project-name">中央會賺錢的錢包</li>
 									<li>日常打理</li>
 									<li>作者: 財務金融學系</li>
-									<li class="read-more"><a href="product" class="btn">Read more</a></li>
+									<li class="read-more"><a href="productSimple" class="btn">Read more</a></li>
 								</ul>
 							</div>
 						</div>

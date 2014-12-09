@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" %>
+<%@ taglib uri="/struts-tags" prefix="struts" %>
 <jsp:include page="header.jsp"></jsp:include>
 
 
@@ -78,26 +79,35 @@
 	        	<div class="row">
 	        		<div class="col-md-4 col-sm-6">
 	        			<div class="service-wrapper">
+	        			                    <struts:url action="allproduct" var="tourPage">
+                                                <struts:param name="group" >TOUR</struts:param>
+                                            </struts:url>
 		        			<img src="img/service-icon/diamond.png" alt="Service 1">
-		        			<h3>Aliquam in adipiscing</h3>
-		        			<p>Praesent rhoncus mauris ac sollicitudin vehicula. Nam fringilla turpis turpis, at posuere turpis aliquet sit amet condimentum</p>
-		        			<a href="#" class="btn">Read more</a>
+		        			<h3>遊客專區</h3>
+		        			<p>這些App能夠使您在中央玩得更盡興</p>
+		        			<a href="<struts:property value="#tourPage" />" class="btn">Read more</a>
 		        		</div>
 	        		</div>
 	        		<div class="col-md-4 col-sm-6">
 	        			<div class="service-wrapper">
+	        			                    <struts:url action="allproduct" var="studentPage">
+                                                <struts:param name="group" >STUDENT</struts:param>
+                                            </struts:url>
 		        			<img src="img/service-icon/ruler.png" alt="Service 2">
-		        			<h3>Curabitur mollis</h3>
-		        			<p>Suspendisse eget libero mi. Fusce ligula orci, vulputate nec elit ultrices, ornare faucibus orci. Aenean lectus sapien, vehicula</p>
-		        			<a href="#" class="btn">Read more</a>
+		        			<h3>學生專區</h3>
+		        			<p>專屬於學生的方便服務</p>
+		        			<a href="<struts:property value="#studentPage" />" class="btn">Read more</a>
 		        		</div>
 	        		</div>
 	        		<div class="col-md-4 col-sm-6">
 	        			<div class="service-wrapper">
+	        			                    <struts:url action="allproduct" var="parentPage">
+                                                <struts:param name="group" >PARENT</struts:param>
+                                            </struts:url>
 		        			<img src="img/service-icon/box.png" alt="Service 3">
-		        			<h3>Vivamus mattis</h3>
-		        			<p>Phasellus posuere et nisl ac commodo. Nulla facilisi. Sed tincidunt bibendum cursus. Aenean vulputate aliquam risus rutrum scelerisque</p>
-		        			<a href="#" class="btn">Read more</a>
+		        			<h3>家長專區</h3>
+		        			<p>方便的APP使您得知學子與學校的最新消息</p>
+		        			<a href="<struts:property value="#parentPage" />" class="btn">Read more</a>
 		        		</div>
 	        		</div>
 	        	</div>
@@ -111,7 +121,7 @@
 				<div class="row">
 					<div class="col-md-12">
 						<div class="calltoaction-wrapper">
-							<h3>It's a free multipurpose Bootstrap 3 template!</h3> <a href="http://www.dragdropsite.com" class="btn btn-orange">Download here!</a>
+							<h3>總攬所有的APP</h3> <a href="allproduct" class="btn btn-orange">進入!</a>
 						</div>
 					</div>
 				</div>
@@ -119,72 +129,11 @@
 		</div>
 		<!-- End Call to Action Bar -->
 
-		<!-- Testimonials -->
-	    <div class="section">
-			<div class="container">
-				<h2>Testimonials</h2>
-				<div class="row">
-					<!-- Testimonial -->
-					<div class="testimonial col-md-4 col-sm-6">
-						<!-- Author Photo -->
-						<div class="author-photo">
-							<img src="img/user1.jpg" alt="Author 1">
-						</div>
-						<div class="testimonial-bubble">
-							<blockquote>
-								<!-- Quote -->
-								<p class="quote">
-		                            "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut."
-                        		</p>
-                        		<!-- Author Info -->
-                        		<cite class="author-info">
-                        			- Name Surname,<br>Managing Director at <a href="#">Some Company</a>
-                        		</cite>
-                        	</blockquote>
-                        	<div class="sprite arrow-speech-bubble"></div>
-                        </div>
-                    </div>
-                    <!-- End Testimonial -->
-                    <div class="testimonial col-md-4 col-sm-6">
-						<div class="author-photo">
-							<img src="img/user5.jpg" alt="Author 2">
-						</div>
-						<div class="testimonial-bubble">
-							<blockquote>
-								<p class="quote">
-		                            "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo."
-                        		</p>
-                        		<cite class="author-info">
-                        			- Name Surname,<br>Managing Director at <a href="#">Some Company</a>
-                        		</cite>
-                        	</blockquote>
-                        	<div class="sprite arrow-speech-bubble"></div>
-                        </div>
-                    </div>
-					<div class="testimonial col-md-4 col-sm-6">
-						<div class="author-photo">
-							<img src="img/user2.jpg" alt="Author 3">
-						</div>
-						<div class="testimonial-bubble">
-							<blockquote>
-								<p class="quote">
-		                            "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
-                        		</p>
-                        		<cite class="author-info">
-                        			- Name Surname,<br>Managing Director at <a href="#">Some Company</a>
-                        		</cite>
-                        	</blockquote>
-                        	<div class="sprite arrow-speech-bubble"></div>
-                        </div>
-                    </div>
-				</div>
-			</div>
-	    </div>
-	    <!-- End Testimonials -->
+
+	  
 
 
-
-		<!-- Our Clients -->
+		<!-- Our Clients 
 	    <div class="section">
 	    	<div class="container">
 	    		<h2>Our Clients</h2>
@@ -204,6 +153,7 @@
 				</div>
 			</div>
 	    </div>
+	    -->
 	    <!-- End Our Clients -->
 
 <jsp:include flush="true" page="footer.jsp"></jsp:include>

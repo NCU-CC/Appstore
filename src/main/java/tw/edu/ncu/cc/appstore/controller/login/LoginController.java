@@ -1,4 +1,4 @@
-package tw.edu.ncu.cc.appstore.controller;
+package tw.edu.ncu.cc.appstore.controller.login;
 
 import javax.inject.Inject;
 

@@ -3,6 +3,7 @@ package tw.edu.ncu.cc.appstore.service;
 import java.util.Map;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Service;
 
@@ -23,13 +24,13 @@ public class AuthServiceImpl implements AuthService{
     }
 
     @SuppressWarnings("rawtypes")
-    public boolean isLoginSuccess(Map request) {
+    public boolean isLoginSuccess(HttpServletRequest request) {
         return openIDManager.checkAuthentication(request);
     }
 
     @SuppressWarnings("rawtypes")
-    public String getStudentId(Map request) {
-        return openIDManager.getStudentID(request);
+    public String getStudentId(HttpServletRequest request) {
+        return openIDManager.getIdentityID(request);
     }
 
 }

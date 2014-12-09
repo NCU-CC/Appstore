@@ -5,7 +5,7 @@
 
 <struts>
 
-    <constant name="struts.enable.DynamicMethodInvocation" value="false" />
+    <constant name="struts.enable.DynamicMethodInvocation" value="true" />
     <constant name="struts.devMode" value="true" />
 
 	<package name="user" extends="struts-default" namespace="/">
@@ -41,16 +41,162 @@
             <result name="success">jsps/index.jsp</result>
             <result name="login" type="redirect">login</result>
         </action>
-        <action name="allproduct" class="">
+        <action name="allproductSimple" class="">
             <result name="success">jsps/product3.jsp</result>
         </action>
-        <action name="product" class="">
+        <action name="productSimple" class="">
             <result name="success">jsps/productdetail.jsp</result>
+        </action>
+        <action name="404" class="">
+            <result name="success">jsps/404.jsp</result>
         </action>
         <action name="logout" class="logoutController">
             <result name="success" type="redirect">/</result>
             <result name="error">500.html</result>
         </action>
+        <action name="uploadss" class="uploadController">
+        <interceptor-ref name="fileUpload">
+            <param name="allowedTypes">image/bmp,image/x-png,image/gif,image/jpeg</param>
+            <param name="maximumSize">2097152</param>
+        </interceptor-ref>
+        <interceptor-ref name="defaultStack" />
+            <result name="input">/upload.jsp</result>
+            <result name="list">/uploadList.jsp</result>
+        </action>
+        
+        
+        <action name="uploadone" class="uploadOneController">
+            <result name="input">jsps/uploadone.jsp</result>
+            <result name="login" type="redirect">login</result>
+            <result name="success" type="redirect">uploadtwo</result>
+        </action>
+        <action name="uploadtwo" class="uploadTwoController">
+            <result name="input">jsps/uploadtwo.jsp</result>
+            <result name="login" type="redirect">login</result>
+            <result name="success" type="redirect">uploadthree</result>
+            <result name="none" type="redirect">uploadone</result>
+        </action>
+        <action name="uploadthree" class="uploadThreeController">
+            <result name="input">jsps/uploadthree.jsp</result>
+            <result name="login" type="redirect">login</result>
+            <result name="success">jsps/uploadsuccess.jsp</result>
+            <result name="none" type="redirect">uploadtwo</result>
+        </action>
+        <action name="terms" class="">
+            <result name="success">jsps/terms.jsp</result>
+        </action>
+        <action name="personalpage" class="personalPageController">
+            <result name="success">jsps/personpage.jsp</result>
+            <result name="login" type="redirect">login</result>
+        </action>
+        
+        <action name="uploadsuccess" class="">
+            <result name="success">jsps/uploadsuccess.jsp</result>
+        </action>
+        <action name="admin" class="adminLoginController">
+            <result name="login">jsps/adminlogin.jsp</result>
+            <result name="success" type="redirect">checklist</result>
+        </action>
+        
+        
+        <action name="product" class="productViewController">
+            <result name="input" type="redirect">allproduct</result>
+            <result name="success">jsps/product.jsp</result>
+            <result name="error">jsps/errormessage.jsp</result>
+        </action>
+        
+        <action name="allproduct" class="productListController">
+            <result name="success">jsps/productlist.jsp</result>
+            <result name="error">jsps/errormessage.jsp</result>
+        </action>
+        <action name="productcheck" class="productCheckController">
+            <result name="input" type="redirect">allproduct</result>
+            <result name="success">jsps/productcheck.jsp</result>
+            <result name="error">jsps/errormessage.jsp</result>
+            <result name="login" type="redirect">admin</result>
+        </action>
+        <action name="checklist" class="allProductListController">
+            <result name="input" type="redirect">allproduct</result>
+            <result name="success">jsps/uncheckproductlist.jsp</result>
+            <result name="error">jsps/errormessage.jsp</result>
+            <result name="login" type="redirect">admin</result>
+        </action>
+        <action name="productedit" class="productEditController">
+            <result name="input" type="redirect">personalpage</result>
+            <result name="success">jsps/productedit.jsp</result>
+            <result name="error">jsps/errormessage.jsp</result>
+            <result name="login" type="redirect">login</result>
+        </action>
+        
+        
+        <action name="updateproductone" class="reUploadOneController">
+            <result name="input">jsps/reuploadone.jsp</result>
+            <result name="login" type="redirect">login</result>
+            <result name="success" type="redirect">
+                <param name="location">updateproducttwo</param>
+                <param name="id">${id}</param>
+            </result>
+        </action>
+        <action name="updateproducttwo" class="reUploadTwoController">
+            <result name="input">jsps/reuploadtwo.jsp</result>
+            <result name="login" type="redirect">login</result>
+            <result name="success" type="redirect">
+                <param name="location">updateproductthree</param>
+                <param name="id">${id}</param>
+            </result>
+            <result name="none" type="redirect">
+                <param name="location">updateproductone</param>
+                <param name="id">${id}</param>
+            </result>
+            
+        </action>
+        <action name="updateproductthree" class="reUploadThreeController">
+            <result name="input">jsps/reuploadthree.jsp</result>
+            <result name="login" type="redirect">login</result>
+            <result name="success">jsps/uploadsuccess.jsp</result>
+            <result name="none" type="redirect">
+                <param name="location">updateproducttwo</param>
+                <param name="id">${id}</param>
+            </result>
+        </action>
+        
+        
+        
+        <action name="aaupload/*/*" class="uploadFileController">   
+            <result name="success" type="stream">
+                <param name="folder">{1}</param>
+                <param name="fileName">{2}</param>
+                <param name="contentType">application/octet-stream</param>
+                <param name="inputName">inputStream</param>
+                <param name="contentDisposition">attachment;filename="${fileName}"</param>
+                <param name="bufferSize">4096</param>
+            </result>
+        </action>
+        
+        
 
 	</package>
+	
+	<package name="user2" extends="struts-default" namespace="/upload">
+	   <action name="images" class="uploadFileController">   
+	            <param name="folder">images</param>
+            <result name="success" type="stream">
+                <param name="contentType">application/octet-stream</param>
+                <param name="inputName">inputStream</param>
+                <param name="contentDisposition">attachment;filename="${fileName}"</param>
+                <param name="bufferSize">4096</param>
+            </result>
+        </action>
+        <action name="code" class="uploadFileController">   
+                <param name="folder">code</param>
+            <result name="success" type="stream">
+                <param name="contentType">application/octet-stream</param>
+                <param name="inputName">inputStream</param>
+                <param name="contentDisposition">attachment;filename="${fileName}"</param>
+                <param name="bufferSize">4096</param>
+            </result>
+        </action>
+        
+	</package>
+	
 </struts>

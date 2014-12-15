@@ -15,6 +15,7 @@ import javax.persistence.TemporalType;
 
 @Entity
 public class Product extends BaseBean{
+    private static final long serialVersionUID = 1L;
     private String chineseName;
     private String englishName;
     private String introSimple;

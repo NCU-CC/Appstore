@@ -3,9 +3,11 @@ package tw.edu.ncu.cc.appstore.controller.upload.reupload;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.Date;
 import java.util.List;
 
@@ -112,14 +114,18 @@ public class ReUploadThreeController extends ActionSupport{
         try {
             filesname1 = saveFile(apk, apkFileName.trim().split("\\.")[1]);
             product.setFilePath(filesname1);
-        } catch (Exception e) {
-            filesname1 = null;            
+        }catch (NoSuchAlgorithmException e1) {                        
+            filesname1=null;
+        }catch(IOException e2){
+            filesname1=null;
         }
         try {            
             filesname2 = saveFile(sourceCode, sourceCodeFileName.trim().split("\\.")[1]);           
             product.setSourceCodePath(filesname2);
-        } catch (Exception e) {
-            filesname2 = null;     
+        } catch (NoSuchAlgorithmException e1) {                        
+            filesname2=null;
+        }catch(IOException e2){
+            filesname2=null;
         }
                         
         product.setAppleStore(appleStore);
@@ -143,6 +149,7 @@ public class ReUploadThreeController extends ActionSupport{
                 }
                 
                 Date date = new Date();
+                if(date!=null){
                 product.setDateCreated(date);
                 product.setDateChanged(date);
                 product.setState(ProductStateEnum.UNCHECKED.toString());
@@ -154,6 +161,7 @@ public class ReUploadThreeController extends ActionSupport{
                 service.save(person);
 //                serivceP.save(productState);
                 return SUCCESS;
+                }                
             }
         }
         
@@ -162,8 +170,8 @@ public class ReUploadThreeController extends ActionSupport{
     }
     
     
-    private String saveFile(File file,String end) throws Exception{
-        String md5;
+    private String saveFile(File file,String end) throws NoSuchAlgorithmException, IOException {
+        String md5="";
         InputStream ins = null;
         OutputStream ous = null;
         try {
@@ -183,35 +191,48 @@ public class ReUploadThreeController extends ActionSupport{
                 ous.write(b,0,len);
             }
         }finally {
-            if (ous != null){
-                ous.close();
-            }
-            if(ins!=null){
-                ins.close();
+            try{
+                if (ous != null){
+                    ous.close();
+                }
+                if(ins!=null){
+                    ins.close();
+                }
+            }catch(IOException e){
+                return (md5+"."+end);
             }
         }
         return (md5+"."+end);
     }
     
-    public static byte[] createChecksum(File filename) throws Exception {
-        InputStream fis =  new FileInputStream(filename);
-
-        byte[] buffer = new byte[1024];
-        MessageDigest complete = MessageDigest.getInstance("MD5");
-        int numRead;
-
-        do {
-            numRead = fis.read(buffer);
-            if (numRead > 0) {
-                complete.update(buffer, 0, numRead);
+    public static byte[] createChecksum(File filename) throws NoSuchAlgorithmException, IOException  {
+        InputStream fis = null;
+        try{
+            fis =  new FileInputStream(filename);
+    
+            byte[] buffer = new byte[1024];
+            MessageDigest complete = MessageDigest.getInstance("SHA-512");
+            int numRead;
+    
+            do {
+                numRead = fis.read(buffer);
+                if (numRead > 0) {
+                    complete.update(buffer, 0, numRead);
+                }
+            } while (numRead != -1);
+            return complete.digest();
+        }finally{
+            if(fis!=null){
+                try{
+                fis.close();
+                }catch(IOException e){
+                    return null;
+                }
             }
-        } while (numRead != -1);
-
-        fis.close();
-        return complete.digest();
+        }                
     }
 
-    public static String getMD5Checksum(File filename) throws Exception {
+    public static String getMD5Checksum(File filename) throws NoSuchAlgorithmException, IOException   {
         byte[] b = createChecksum(filename);
         String result = "";
 

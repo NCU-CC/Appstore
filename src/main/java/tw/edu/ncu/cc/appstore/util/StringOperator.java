@@ -1,6 +1,7 @@
 package tw.edu.ncu.cc.appstore.util;
 
 import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 
 import org.apache.commons.lang3.StringUtils;
 
@@ -12,14 +13,14 @@ public class StringOperator {
     public static String md5(String str) {
         String md5=null;
         try {
-          MessageDigest md=MessageDigest.getInstance("MD5");
+          MessageDigest md=MessageDigest.getInstance("SHA-512");
           byte[] barr=md.digest(str.getBytes());  //將 byte 陣列加密
           StringBuffer sb=new StringBuffer();  //將 byte 陣列轉成 16 進制
           for (int i=0; i < barr.length; i++) {sb.append(byte2Hex(barr[i]));}
           String hex=sb.toString();
           md5=hex.toUpperCase(); //一律轉成大寫
           }
-        catch(Exception e) {e.printStackTrace();}
+        catch(NoSuchAlgorithmException e) {e.printStackTrace();}
         return md5;
         }
       public static String byte2Hex(byte b) {

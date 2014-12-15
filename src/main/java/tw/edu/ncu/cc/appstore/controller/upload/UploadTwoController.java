@@ -3,9 +3,11 @@ package tw.edu.ncu.cc.appstore.controller.upload;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 
 import javax.servlet.http.HttpSession;
 
@@ -54,7 +56,10 @@ public class UploadTwoController extends ActionSupport{
             String filesname2 = saveFile(pictureTwo, pictureTwoFileName.trim().split("\\.")[1]);
             product.setImagePath(filesname1);
             product.setImage2Path(filesname2);
-        } catch (Exception e) {            
+        } 
+        catch (NoSuchAlgorithmException e1) {                        
+            return INPUT;
+        }catch(IOException e2){
             return INPUT;
         }
         
@@ -62,8 +67,8 @@ public class UploadTwoController extends ActionSupport{
         return SUCCESS;
     }
     
-    private String saveFile(File file,String end) throws Exception{
-        String md5;
+    private String saveFile(File file,String end) throws NoSuchAlgorithmException, IOException {
+        String md5="";
         InputStream ins = null;
         OutputStream ous = null;
         try {
@@ -83,21 +88,27 @@ public class UploadTwoController extends ActionSupport{
                 ous.write(b,0,len);
             }
         }finally {
-            if (ous != null){
-                ous.close();
-            }
-            if(ins!=null){
-                ins.close();
+            try{
+                if (ous != null){
+                    ous.close();
+                }
+                if(ins!=null){
+                    ins.close();
+                }
+            }catch(IOException e){
+                return (md5+"."+end);
             }
         }
         return (md5+"."+end);
     }
     
-    public static byte[] createChecksum(File filename) throws Exception {
-        InputStream fis =  new FileInputStream(filename);
+    public static byte[] createChecksum(File filename) throws NoSuchAlgorithmException, IOException  {
+        InputStream fis=null;
+        try{
+        fis =  new FileInputStream(filename);
 
         byte[] buffer = new byte[1024];
-        MessageDigest complete = MessageDigest.getInstance("MD5");
+        MessageDigest complete = MessageDigest.getInstance("SHA-512");
         int numRead;
 
         do {
@@ -106,12 +117,19 @@ public class UploadTwoController extends ActionSupport{
                 complete.update(buffer, 0, numRead);
             }
         } while (numRead != -1);
-
-        fis.close();
         return complete.digest();
+        }finally{
+            if(fis!=null){
+                try{
+                    fis.close();
+                }catch(IOException e){
+                    return null;
+                }
+            }
+        }
     }
 
-    public static String getMD5Checksum(File filename) throws Exception {
+    public static String getMD5Checksum(File filename) throws NoSuchAlgorithmException, IOException  {
         byte[] b = createChecksum(filename);
         String result = "";
 

@@ -1,5 +1,6 @@
 package tw.edu.ncu.cc.appstore.entity;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.GeneratedValue;
@@ -11,7 +12,8 @@ import javax.persistence.TemporalType;
 import javax.persistence.Version;
 
 @MappedSuperclass
-public class BaseBean {
+public class BaseBean implements Serializable{
+    private static final long serialVersionUID = 1L;
 
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)

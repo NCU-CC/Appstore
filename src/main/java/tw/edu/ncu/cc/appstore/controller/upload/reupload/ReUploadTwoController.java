@@ -3,9 +3,11 @@ package tw.edu.ncu.cc.appstore.controller.upload.reupload;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -88,7 +90,9 @@ public class ReUploadTwoController extends ActionSupport{
             String filesname2 = saveFile(pictureTwo, pictureTwoFileName.trim().split("\\.")[1]);
             product.setImagePath(filesname1);
             product.setImage2Path(filesname2);
-        } catch (Exception e) {
+        }catch (NoSuchAlgorithmException e1) {                        
+            return INPUT;
+        }catch(IOException e2){
             return INPUT;
         }
         
@@ -96,7 +100,7 @@ public class ReUploadTwoController extends ActionSupport{
         return SUCCESS;
     }
     
-    private String saveFile(File file,String end) throws Exception{
+    private String saveFile(File file,String end) throws NoSuchAlgorithmException, IOException {
         String md5;
         InputStream ins = null;
         OutputStream ous = null;
@@ -127,11 +131,11 @@ public class ReUploadTwoController extends ActionSupport{
         return (md5+"."+end);
     }
     
-    public static byte[] createChecksum(File filename) throws Exception {
+    public static byte[] createChecksum(File filename) throws NoSuchAlgorithmException, IOException  {
         InputStream fis =  new FileInputStream(filename);
 
         byte[] buffer = new byte[1024];
-        MessageDigest complete = MessageDigest.getInstance("MD5");
+        MessageDigest complete = MessageDigest.getInstance("SHA-512");
         int numRead;
 
         do {
@@ -145,7 +149,7 @@ public class ReUploadTwoController extends ActionSupport{
         return complete.digest();
     }
 
-    public static String getMD5Checksum(File filename) throws Exception {
+    public static String getMD5Checksum(File filename) throws NoSuchAlgorithmException, IOException  {
         byte[] b = createChecksum(filename);
         String result = "";
 

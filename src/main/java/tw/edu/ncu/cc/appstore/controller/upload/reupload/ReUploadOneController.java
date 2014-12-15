@@ -73,26 +73,6 @@ public class ReUploadOneController extends ActionSupport{
         }
         return null;
     }
-    private Product copyProduct(Product product){
-        Product newProduct = new Product();
-        newProduct.setAppleStore(product.getAppleStore());
-        newProduct.setAuthor(product.getAuthor());
-        newProduct.setAuthorEmail(product.getAuthorEmail());
-        newProduct.setAuthorName(product.getAuthorName());
-        newProduct.setAuthorPhone(product.getAuthorPhone());
-//        newProduct.setCategory(category);
-        newProduct.setChineseName(product.getChineseName());
-        newProduct.setEnglishName(product.getEnglishName());
-//        newProduct.setFilePath();
-        newProduct.setGooglePlay(product.getGooglePlay());
-//        newProduct.setImage2Path(image2Path);
-//        newProduct.setImagePath(imagePath);
-        newProduct.setIntroduction(product.getIntroduction());
-        newProduct.setIntroSimple(product.getIntroSimple());
-        newProduct.setUserGroup(product.getUserGroup());
-        return newProduct;
-    }
-
     private void settingProduct(Product product){
         appName=product.getChineseName();
         simpleIntro=product.getIntroSimple();

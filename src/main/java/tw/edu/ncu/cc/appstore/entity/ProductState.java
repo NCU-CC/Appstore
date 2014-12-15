@@ -15,6 +15,7 @@ import org.hibernate.annotations.IndexColumn;
 
 @Entity
 public class ProductState extends BaseBean{
+    private static final long serialVersionUID = 1L;
     private String state;   
     @Temporal(value=TemporalType.TIMESTAMP)
     private Date lastChanged;

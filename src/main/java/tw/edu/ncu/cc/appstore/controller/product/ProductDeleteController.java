@@ -31,24 +31,17 @@ public class ProductDeleteController extends ActionSupport{
     
     @Override
     public String execute(){
-        System.out.println("aaaa");
         if(!PersonUtil.isLogined(ServletActionContext.getRequest())){            
             return LOGIN;
         }        
-        System.out.println("bbbbb");
-        System.out.println("xxx : "+id);
         if(id==0){            
             return INPUT;
         }        
-        System.out.println("ccccc");
         if(isSameAuthor() || isAdmin()){
-            System.out.println("ddddd");
             ProductState productState= serivce.find(ProductState.class, id);
             serivce.delete(productState);   
-            System.out.println("eeee");
             return SUCCESS;
         }
-        System.out.println("ffff");
         return ERROR;
     }
     

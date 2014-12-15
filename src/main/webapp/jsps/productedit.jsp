@@ -1,8 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="/struts-tags" prefix="struts" %>
 <jsp:include page="header.jsp"></jsp:include>
 
-        <!-- Page Title -->
+        <%-- Page Title --%>
         <div class="section section-breadcrumbs">
             <div class="container">
                 <div class="row">
@@ -36,11 +37,14 @@
                         <h3 class="panel-title">狀態更變</h3>
                       </div>
                       <div class="panel-body">
-                             <struts:url action="updateproductone" var="editPage">
-                                 <struts:param name="id" >${id }</struts:param>
-                             </struts:url>
-                             <a href="<struts:property value="#editPage" />" class="btn">提交新版本</a>
                              
+                             <a href="<struts:url action="updateproductone">
+                                 <struts:param name="id" >${id }</struts:param>
+                                 <struts:param name="struts.token.name" value="%{'token'}"/>
+                                 <struts:param name="token" value="%{token}"/>
+                             </struts:url>" class="btn">提交新版本</a>
+                             
+                             <a href="<struts:url namespace="/" action='productdelete' ><struts:param name="id" >${id }</struts:param><struts:param name="struts.token.name" value="%{'token'}"/><struts:param name="token" value="%{token}"/></struts:url>" data-confirm="是否要刪除該APP？ 刪除APP將無法回復" data-method="post"  class="btn btn-danger">刪除APP</a>
                              
                       </div>
                     </div>
@@ -49,7 +53,7 @@
                 
             
                 <div class="row">
-                    <!-- Product Image & Available Colors -->
+                    <%-- Product Image & Available Colors --%>
                     <div class="col-sm-6">
                         <div class="product-image-large">
                             <img src="upload/images?fileName=${product.imagePath}" alt="Item Name">
@@ -67,8 +71,8 @@
                         </div>
                     </div>
                     
-                    <!-- End Product Image & Available Colors -->
-                    <!-- Product Summary & Options -->
+                    <%-- End Product Image & Available Colors --%>
+                    <%-- Product Summary & Options --%>
                     <div class="col-sm-6 product-details">
                         <h4>${product.chineseName }</h4>
                         <h5>簡介</h5>
@@ -76,7 +80,7 @@
                             ${product.introSimple}
                         </p>
                         <table class="shop-item-selections">
-                            <!-- Color Selector -->
+                            <%-- Color Selector --%>
                             <tr>
                                 <td><b>分類</b></td>
                                 <td>
@@ -85,7 +89,7 @@
                                         </struts:iterator>
                                 </td>
                             </tr>
-                            <!-- Size Selector -->
+                            <%-- Size Selector --%>
                             <tr>
                                 <td><b>使用族群:</b></td>
                                 <td>
@@ -94,7 +98,7 @@
                                     </struts:iterator>
                                 </td>
                             </tr>
-                            <!-- Quantity -->                            
+                            <%-- Quantity --%>                            
                              <tr>
                                 <td><b>更新日期:</b></td>
                                 <td>
@@ -102,7 +106,7 @@
                                        <struts:date name="productKD" format="yyyy-MMM-dd" />
                                 </td>
                             </tr>
-                            <!-- Add to Cart Button -->
+                            <%-- Add to Cart Button --%>
                             <tr>
                                 <td>&nbsp;</td>
                                 <td>
@@ -123,7 +127,7 @@
                             </tr>
                         </table>
                     </div>
-                    <!-- End Product Summary & Options -->
+                    <%-- End Product Summary & Options --%>
                     <div class="col-sm-6 product-details">
                     <h4>作者</h4>
                         <p>聯絡資料</p>
@@ -149,21 +153,21 @@
                         </table>
                     </div>
                     
-                    <!-- Full Description & Specification -->
+                    <%-- Full Description & Specification --%>
                     <div class="col-sm-12">
                         <div class="tabbable">
-                            <!-- Tabs -->
+                            <%-- Tabs --%>
                             <ul class="nav nav-tabs product-details-nav">
                                 <li class="active"><a href="#tab1" data-toggle="tab">Description</a></li>
-                                <!--<li><a href="#tab2" data-toggle="tab">Specification</a></li> -->
+                                <%--<li><a href="#tab2" data-toggle="tab">Specification</a></li> --%>
                             </ul>
-                            <!-- Tab Content (Full Description) -->
+                            <%-- Tab Content (Full Description) --%>
                             <div class="tab-content product-detail-info">
                                 <div class="tab-pane active" id="tab1">
                                     <h4>Product Description</h4>
                                     <p>${product.introduction}</p>
                                 </div>
-                                <!-- Tab Content (Specification) 
+                                <%-- Tab Content (Specification) 
                                 <div class="tab-pane" id="tab2">
                                     <table>
                                         <tr>
@@ -200,27 +204,20 @@
                                         </tr>
                                     </table>
                                 </div>
-                                -->
+                                --%>
                             </div>
                         </div>
                     </div>
-                    <!-- End Full Description & Specification -->
+                    <%-- End Full Description & Specification --%>
                 </div>
             </div>
         </div>
 
 <jsp:include flush="true" page="footer.jsp"></jsp:include>
 
-        <!-- Javascripts -->
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/jquery-1.9.1.min.js"><\/script>')</script>
-        <script src="js/bootstrap.min.js"></script>
-        <script src="http://cdn.leafletjs.com/leaflet-0.5.1/leaflet.js"></script>
-        <script src="js/jquery.fitvids.js"></script>
-        <script src="js/jquery.sequence-min.js"></script>
-        <script src="js/jquery.bxslider.js"></script>
-        <script src="js/main-menu.js"></script>
-        <script src="js/template.js"></script>
+<jsp:include page="commonjs.jsp"></jsp:include>
+<script src="<c:url value='/js/rails.js'/>" type="text/javascript"></script>
+        <script src="<c:url value='/js/data-confirm-modal.js'/>" type="text/javascript"></script>     
 
     </body>
 </html>

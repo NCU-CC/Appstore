@@ -1,5 +1,6 @@
 package tw.edu.ncu.cc.appstore.controller.upload;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -39,7 +40,14 @@ public class PersonalPageController extends ActionSupport{
             if(tmpId!=null && tmpId.length()>0){
                 Person person=service.findPersonByAccount(tmpId);
                 if(person!=null){
+                    List<ProductState> forDelete = new ArrayList<ProductState>();
                     List<ProductState> productsList =person.getProducts();
+                    for(ProductState pp : productsList){
+                        if(pp.isDeleted()==true){
+                            forDelete.add(pp);
+                        }
+                    }
+                    productsList.removeAll(forDelete);
                     this.productsList=productsList;
                     return SUCCESS;
                 }                

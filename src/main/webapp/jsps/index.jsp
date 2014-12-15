@@ -3,40 +3,40 @@
 <jsp:include page="header.jsp"></jsp:include>
 
 
-        <!-- Homepage Slider -->
+        <%-- Homepage Slider --%>
         <div class="homepage-slider">
         	<div id="sequence">
 				<ul class="sequence-canvas">
-					<!-- Slide 1 -->
+					<%-- Slide 1 --%>
 					<li class="bg4">
-						<!-- Slide Title -->
+						<%-- Slide Title --%>
 						<h2 class="title">NCU AppStore</h2>
-						<!-- Slide Text -->
+						<%-- Slide Text --%>
 						<h3 class="subtitle">NCU AppStore是中央大學App的統合網站，透過此網站您可以掌握最新的中央大學App</h3>
-						<!-- Slide Image -->
+						<%-- Slide Image --%>
 						<img class="slide-img" src="img/homepage-slider/slide1.png" alt="Slide 1" />
 					</li>
-					<!-- End Slide 1 -->
-					<!-- Slide 2 -->
+					<%-- End Slide 1 --%>
+					<%-- Slide 2 --%>
 					<li class="bg3">
-						<!-- Slide Title -->
+						<%-- Slide Title --%>
 						<h2 class="title">App</h2>
-						<!-- Slide Text -->
+						<%-- Slide Text --%>
 						<h3 class="subtitle">我們的App提供各式各樣的服務，現階段NCUAPP.只提供course和location的APP，在將來我們我提供更多服務</h3>
-						<!-- Slide Image -->
+						<%-- Slide Image --%>
 						<img class="slide-img" src="img/homepage-slider/slide2.png" alt="Slide 2" />
 					</li>
-					<!-- End Slide 2 -->
-					<!-- Slide 3 -->
+					<%-- End Slide 2 --%>
+					<%-- Slide 3 --%>
 					<li class="bg1">
-						<!-- Slide Title -->
+						<%-- Slide Title --%>
 						<h2 class="title">Security</h2>
-						<!-- Slide Text -->
+						<%-- Slide Text --%>
 						<h3 class="subtitle">NCUAPP.是相當安全的，我們全程透過ssl加密來傳送資料。不需要當心您的資料被竊取。</h3>
-						<!-- Slide Image -->
+						<%-- Slide Image --%>
 						<img class="slide-img" src="img/homepage-slider/slide3.png" alt="Slide 3" />
 					</li>
-					<!-- End Slide 3 -->
+					<%-- End Slide 3 --%>
 				</ul>
 				<div class="sequence-pagination-wrapper">
 					<ul class="sequence-pagination">
@@ -47,9 +47,9 @@
 				</div>
 			</div>
         </div>
-        <!-- End Homepage Slider -->
+        <%-- End Homepage Slider --%>
 
-		<!-- Press Coverage -->
+		<%-- Press Coverage --%>
         <div class="section">
 	    	<div class="container">
 				<div class="row">
@@ -71,9 +71,9 @@
 				</div>
 			</div>
 		</div>
-		<!-- Press Coverage -->
+		<%-- Press Coverage --%>
 
-		<!-- Services -->
+		<%-- Services --%>
         <div class="section">
 	        <div class="container">
 	        	<div class="row">
@@ -113,9 +113,9 @@
 	        	</div>
 	        </div>
 	    </div>
-	    <!-- End Services -->
+	    <%-- End Services --%>
 
-		<!-- Call to Action Bar -->
+		<%-- Call to Action Bar --%>
 	    <div class="section section-white">
 			<div class="container">
 				<div class="row">
@@ -127,13 +127,13 @@
 				</div>
 			</div>
 		</div>
-		<!-- End Call to Action Bar -->
+		<%-- End Call to Action Bar --%>
 
 
 	  
 
 
-		<!-- Our Clients 
+		<%-- Our Clients 
 	    <div class="section">
 	    	<div class="container">
 	    		<h2>Our Clients</h2>
@@ -153,21 +153,12 @@
 				</div>
 			</div>
 	    </div>
-	    -->
-	    <!-- End Our Clients -->
+	    --%>
+	    <%-- End Our Clients --%>
 
 <jsp:include flush="true" page="footer.jsp"></jsp:include>
 
-        <!-- Javascripts -->
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/jquery-1.9.1.min.js"><\/script>')</script>
-        <script src="js/bootstrap.min.js"></script>
-        <script src="http://cdn.leafletjs.com/leaflet-0.5.1/leaflet.js"></script>
-        <script src="js/jquery.fitvids.js"></script>
-        <script src="js/jquery.sequence-min.js"></script>
-        <script src="js/jquery.bxslider.js"></script>
-        <script src="js/main-menu.js"></script>
-        <script src="js/template.js"></script>
+        <jsp:include page="commonjs.jsp"></jsp:include>
 
     </body>
 </html>

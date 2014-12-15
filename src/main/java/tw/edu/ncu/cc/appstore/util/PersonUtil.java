@@ -1,13 +1,8 @@
 package tw.edu.ncu.cc.appstore.util;
 
-import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 
-import org.apache.struts2.ServletActionContext;
-
 import tw.edu.ncu.cc.appstore.entity.Person;
-import tw.edu.ncu.cc.appstore.service.IPersonService;
-import tw.edu.ncu.cc.appstore.service.PersonServiceImpl;
 
 public class PersonUtil {
     public static final String PERSON_INFO = "personInfo";

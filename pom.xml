@@ -146,6 +146,7 @@
 	</dependencies>
 	
 	<build>
+	<finalName>appstore</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.mortbay.jetty</groupId>

@@ -24,21 +24,13 @@ public class UploadFileController extends ActionSupport{
     private String folder;
     
     
-    public String execute() throws FileNotFoundException {
-//        fileName=ActionContext.getContext().getName();
-//        System.out.println("@@@@@@ "+fileName);
-        
-        File fileToDownload = new File(PATH+"upload"+File.separator+folder+File.separator+fileName);
-        System.out.println("!!!!!!!"+PATH+"upload"+File.separator+folder+File.separator+fileName);
- 
+    public String execute() throws FileNotFoundException {        
+        File fileToDownload = new File(PATH+"upload"+File.separator+folder+File.separator+fileName); 
         inputStream = new FileInputStream(fileToDownload);
         fileName = fileToDownload.getName();
-        contentLength = fileToDownload.length();
-         
+        contentLength = fileToDownload.length();         
         return SUCCESS;
     }
-    
-    
     
     public InputStream getInputStream() {
         return inputStream;
@@ -50,7 +42,7 @@ public class UploadFileController extends ActionSupport{
         return fileName;
     }
     public void setFileName(String fileName) {
-        this.fileName = fileName;
+        this.fileName = fileName.split(File.separator)[0];
     }
     public long getContentLength() {
         return contentLength;
@@ -58,20 +50,11 @@ public class UploadFileController extends ActionSupport{
     public void setContentLength(long contentLength) {
         this.contentLength = contentLength;
     }
-
-
-
     public String getFolder() {
         return folder;
     }
 
-
-
     public void setFolder(String folder) {
-        this.folder = folder;
+        this.folder = folder.split(File.separator)[0];
     }
-    
-    
-    
-
 }

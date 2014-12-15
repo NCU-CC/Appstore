@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" %>
 <jsp:include page="header.jsp"></jsp:include>
 
-        <!-- Page Title -->
+        <%-- Page Title --%>
 		<div class="section section-breadcrumbs">
 			<div class="container">
 				<div class="row">
@@ -15,7 +15,7 @@
         <div class="section">
 	    	<div class="container">
 	    		<div class="row">
-	    			<!-- Product Image & Available Colors -->
+	    			<%-- Product Image & Available Colors --%>
 	    			<div class="col-sm-6">
 	    				<div class="product-image-large">
 	    					<img src="img/product3.jpg" alt="Item Name">
@@ -28,33 +28,33 @@
 							<span class="color-green"></span>
 						</div>
 	    			</div>
-	    			<!-- End Product Image & Available Colors -->
-	    			<!-- Product Summary & Options -->
+	    			<%-- End Product Image & Available Colors --%>
+	    			<%-- Product Summary & Options --%>
 	    			<div class="col-sm-6 product-details">
 	    				<h4>中央大學導航系統</h4>
-	    				<!--<div class="price">
+	    				<%--<div class="price">
 							<span class="price-was">$959.99</span> $999.99
-						</div> -->
+						</div> --%>
 						<h5>Quick Overview</h5>
 	    				<p>
 	    					提供中央大學周邊設施、地下街導覽、交通轉乘資訊、接駁公車、沿站景點等地圖查詢
 	    				</p>
 						<table class="shop-item-selections">
-							<!-- Color Selector -->
+							<%-- Color Selector --%>
 							<tr>
 								<td><b>分類</b></td>
 								<td>
 									地圖相關、導航相關
 								</td>
 							</tr>
-							<!-- Size Selector -->
+							<%-- Size Selector --%>
 							<tr>
 								<td><b>使用族群:</b></td>
 								<td>
 									學生、教職員、遊客、校友
 								</td>
 							</tr>
-							<!-- Quantity -->
+							<%-- Quantity --%>
 							<tr>
 								<td><b>作者:</b></td>
 								<td>
@@ -67,7 +67,7 @@
                                         2014/10/10
                                 </td>
                             </tr>
-							<!-- Add to Cart Button -->
+							<%-- Add to Cart Button --%>
 							<tr>
 								<td>&nbsp;</td>
 								<td>
@@ -77,17 +77,17 @@
 							</tr>
 						</table>
 	    			</div>
-	    			<!-- End Product Summary & Options -->
+	    			<%-- End Product Summary & Options --%>
 	    			
-	    			<!-- Full Description & Specification -->
+	    			<%-- Full Description & Specification --%>
 	    			<div class="col-sm-12">
 	    				<div class="tabbable">
-	    					<!-- Tabs -->
+	    					<%-- Tabs --%>
 							<ul class="nav nav-tabs product-details-nav">
 								<li class="active"><a href="#tab1" data-toggle="tab">Description</a></li>
 								<li><a href="#tab2" data-toggle="tab">Specification</a></li>
 							</ul>
-							<!-- Tab Content (Full Description) -->
+							<%-- Tab Content (Full Description) --%>
 							<div class="tab-content product-detail-info">
 								<div class="tab-pane active" id="tab1">
 									<h4>Product Description</h4>
@@ -108,7 +108,7 @@
 										Donec hendrerit massa metus, a ultrices elit iaculis eu. Pellentesque ullamcorper augue lacus. Phasellus et est quis diam iaculis fringilla id nec sapien. Sed tempor ornare felis, non vulputate dolor. Etiam ornare diam vitae ligula malesuada tempor. Vestibulum nec odio vel libero ullamcorper euismod et in sapien. Suspendisse potenti.
 									</p>
 								</div>
-								<!-- Tab Content (Specification) -->
+								<%-- Tab Content (Specification) --%>
 								<div class="tab-pane" id="tab2">
 									<table>
 										<tr>
@@ -148,23 +148,14 @@
 							</div>
 						</div>
 	    			</div>
-	    			<!-- End Full Description & Specification -->
+	    			<%-- End Full Description & Specification --%>
 	    		</div>
 			</div>
 		</div>
 
 <jsp:include flush="true" page="footer.jsp"></jsp:include>
 
-        <!-- Javascripts -->
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/jquery-1.9.1.min.js"><\/script>')</script>
-        <script src="js/bootstrap.min.js"></script>
-        <script src="http://cdn.leafletjs.com/leaflet-0.5.1/leaflet.js"></script>
-        <script src="js/jquery.fitvids.js"></script>
-        <script src="js/jquery.sequence-min.js"></script>
-        <script src="js/jquery.bxslider.js"></script>
-        <script src="js/main-menu.js"></script>
-        <script src="js/template.js"></script>
+<jsp:include page="commonjs.jsp"></jsp:include>
 
     </body>
 </html>

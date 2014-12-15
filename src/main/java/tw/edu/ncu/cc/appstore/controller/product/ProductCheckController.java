@@ -8,8 +8,8 @@ import org.apache.struts2.ServletActionContext;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
-import com.opensymphony.xwork2.ActionSupport;
 
+import tw.edu.ncu.cc.appstore.controller.TokenBasisController;
 import tw.edu.ncu.cc.appstore.entity.PersonType;
 import tw.edu.ncu.cc.appstore.entity.Product;
 import tw.edu.ncu.cc.appstore.entity.ProductCategory;
@@ -21,7 +21,7 @@ import tw.edu.ncu.cc.appstore.util.PersonUtil;
 
 @Controller
 @Scope("prototype")
-public class ProductCheckController extends ActionSupport{
+public class ProductCheckController extends TokenBasisController{
     private static final long serialVersionUID = 1L;
     private IProductStateService<ProductState> serivce;
     @Inject
@@ -50,6 +50,7 @@ public class ProductCheckController extends ActionSupport{
         if(productState!=null){
             List<Product> list =productState.getAllProducts();
             product=list.get(list.size()-1);
+            createTokenForGet();
             return SUCCESS;
         }       
         return ERROR;
@@ -86,6 +87,7 @@ public class ProductCheckController extends ActionSupport{
             if(isChanged){
                 serivce.save(productState);
             }
+            createTokenForGet();
             return SUCCESS;
         }       
         return ERROR;

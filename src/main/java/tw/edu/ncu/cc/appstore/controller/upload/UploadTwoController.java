@@ -54,8 +54,7 @@ public class UploadTwoController extends ActionSupport{
             String filesname2 = saveFile(pictureTwo, pictureTwoFileName.trim().split("\\.")[1]);
             product.setImagePath(filesname1);
             product.setImage2Path(filesname2);
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (Exception e) {            
             return INPUT;
         }
         

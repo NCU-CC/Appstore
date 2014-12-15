@@ -14,7 +14,6 @@ import tw.edu.ncu.cc.appstore.entity.Person;
 import tw.edu.ncu.cc.appstore.entity.PersonType;
 import tw.edu.ncu.cc.appstore.service.IPersonService;
 import tw.edu.ncu.cc.appstore.util.PersonUtil;
-import tw.edu.ncu.cc.appstore.util.SignVersion;
 
 import com.opensymphony.xwork2.ActionSupport;
 

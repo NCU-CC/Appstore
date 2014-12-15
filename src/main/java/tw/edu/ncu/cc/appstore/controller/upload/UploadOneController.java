@@ -1,8 +1,6 @@
 package tw.edu.ncu.cc.appstore.controller.upload;
 
-import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 import javax.servlet.http.HttpSession;
@@ -69,31 +67,24 @@ public class UploadOneController extends ActionSupport{
         tmpProduct.setAuthorPhone(authorPhone);
         tmpProduct.setAuthorEmail(authorEmail);
         if(appName==null || appName.length()>30 || appName.length()<=0){
-            System.out.println("app is null");
             errorState="true";
             errorMessage="APP名稱需介於1~30個字元";
         }else if(simpleIntro==null || simpleIntro.length()>50 || simpleIntro.length()<=0){
-            System.out.println("simpleIntro is null");
             errorState="true";
             errorMessage="APP簡介需介於1~50個字元";
         }else if(! (tour | student | parent)){
-            System.out.println("checkbox is null");
             errorState="true";
             errorMessage="分類至少需點擊一個";
         }else if(introduction==null || introduction.length()>3000 || introduction.length()<=0){
-            System.out.println("introduction is null");
             errorState="true";
             errorMessage="詳細介紹需介於1~3000個字元";
         }else if(authorName==null || authorName.length()>50 || authorName.length()<=0){
-            System.out.println("authorName is null");
             errorState="true";
             errorMessage="authorName需介於1~50個字元";
         }else if(authorPhone==null || authorPhone.length()>50 || authorPhone.length()<=0){
-            System.out.println("authorPhone is null");
             errorState="true";
             errorMessage="authorPhone需介於1~50個字元";
         }else if(authorEmail==null || authorEmail.length()>50 || authorEmail.length()<=0){
-            System.out.println("authorEmail is null");
             errorState="true";
             errorMessage="authorEmail需介於1~50個字元";
         }else{

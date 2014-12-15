@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import tw.edu.ncu.cc.appstore.entity.Person;
 import tw.edu.ncu.cc.appstore.entity.PersonType;
+import tw.edu.ncu.cc.appstore.util.StringOperator;
 
 @Service
 public class PersonServiceImpl <T extends Person> extends ServiceImpl<T> implements IPersonService<T>{
@@ -38,7 +39,8 @@ public class PersonServiceImpl <T extends Person> extends ServiceImpl<T> impleme
     }
     @SuppressWarnings("unchecked")
     @Transactional(propagation=Propagation.SUPPORTS,readOnly=true)
-    public T findAdminByAccountAndPassword(String account,String password) {
+    public T findAdminByAccountAndPassword(String account,String passwordin) {
+        String password = StringOperator.md5(passwordin);
         List<T> person = this.getDao().creatQuery(
                 "select p from Person p " +
                         "where p.account = :account and deleted=false and p.type = :type and p.password = :password "
@@ -55,9 +57,6 @@ public class PersonServiceImpl <T extends Person> extends ServiceImpl<T> impleme
         if(findPersonByAccount(person.getAccount())!=null){
             throw new RuntimeException("account " +person.getAccount() + "has already existed");
         }
-        System.out.println("creat person: "+person.getAccount());
         this.getDao().create(person);
-        System.out.println("2creat person: "+person.getAccount());
-    }
-
+    }    
 }

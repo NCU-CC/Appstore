@@ -2,16 +2,16 @@
 <%@ taglib prefix="s" uri="/struts-tags" %>
 <jsp:include page="header.jsp"></jsp:include>
 
-        <!-- start:main -->
+        <%-- start:main --%>
         <div class="container">
             <div id="main">
-                <!-- start:breadcrumb -->
+                <%-- start:breadcrumb --%>
                 <ol class="breadcrumb">
                     <li><a href="#">Home</a></li>
                     <li><a href="#">Oauth</a></li>
                     <li class="active">Terms of Service and Privacy Policy</li>
                 </ol>
-                <!-- end:breadcrumb -->
+                <%-- end:breadcrumb --%>
 
                 <div class="row">
                     <div class="col-lg-12">
@@ -21,7 +21,7 @@
                     </div>
                 </div>
 
-                <!-- start:invoice -->
+                <%-- start:invoice --%>
                 <div class="row invoice">
                     <div class="col-lg-12">
                         <div class="invoice-main">
@@ -75,22 +75,22 @@
                         </div>
                     </div>
                 </div>
-                <!-- end:invoice -->
+                <%-- end:invoice --%>
 
             </div>
         </div>
-        <!-- end:main -->
+        <%-- end:main --%>
 
        <jsp:include flush="true" page="footer.jsp"></jsp:include>
 
-    <!-- start:javascript -->
-    <!-- javascript default for all pages-->
+    <%-- start:javascript --%>
+    <%-- javascript default for all pages--%>
     <script src="js/jquery-1.11.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
 
-    <!-- javascript for Srikandi admin -->
+    <%-- javascript for Srikandi admin --%>
     <script src="js/themes.js"></script>
-    <!-- end:javascript -->
+    <%-- end:javascript --%>
 
 </body>
 </html> 

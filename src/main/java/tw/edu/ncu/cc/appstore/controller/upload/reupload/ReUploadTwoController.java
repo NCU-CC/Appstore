@@ -41,9 +41,7 @@ public class ReUploadTwoController extends ActionSupport{
     @Override
     public String execute() throws Exception {
         Product tProduct = getLastProductById(id);
-        System.out.println("is product null "+ (tProduct==null));
         if(tProduct==null || !isSamePerson(tProduct)){
-            System.out.println("two siad login");
             return LOGIN;
         }
             HttpSession session=ServletActionContext.getRequest().getSession(true);
@@ -91,7 +89,6 @@ public class ReUploadTwoController extends ActionSupport{
             product.setImagePath(filesname1);
             product.setImage2Path(filesname2);
         } catch (Exception e) {
-            e.printStackTrace();
             return INPUT;
         }
         

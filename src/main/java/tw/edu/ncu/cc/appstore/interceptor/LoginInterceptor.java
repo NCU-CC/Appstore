@@ -2,7 +2,6 @@ package tw.edu.ncu.cc.appstore.interceptor;
 
 import java.lang.reflect.Method;
 
-import org.apache.struts2.dispatcher.mapper.ActionMapping;
 import org.springframework.aop.MethodBeforeAdvice;
 
 public class LoginInterceptor implements MethodBeforeAdvice{

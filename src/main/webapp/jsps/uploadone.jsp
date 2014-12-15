@@ -3,7 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <jsp:include page="header.jsp"></jsp:include>
 
-        <!-- Page Title -->
+        <%-- Page Title --%>
         <div class="section section-breadcrumbs">
             <div class="container">
                 <div class="row">
@@ -24,7 +24,7 @@
                 <div class="col-xs-3 col-sm-3 col-md-3">
                 </div>
                     <div class="col-xs-6 col-sm-6 col-md-6">
-                        <!-- Contact Form -->
+                        <%-- Contact Form --%>
                         <h3>Application資訊</h3>
                         <div class="contact-form-wrapper">
                         <struts:form cssClass="form-horizontal" role="form" action="uploadone!upload" method="post">                            
@@ -98,9 +98,10 @@
                                         <button type="submit" class="btn pull-right">Send</button>
                                     </div>
                                 </div>
+                                <struts:token/>
                         </struts:form>
                         </div>
-                        <!-- End Contact Info -->
+                        <%-- End Contact Info --%>
                     </div>
                 </div>
             </div>
@@ -108,16 +109,7 @@
 
 <jsp:include flush="true" page="footer.jsp"></jsp:include>
 
-<!-- Javascripts -->
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/jquery-1.9.1.min.js"><\/script>')</script>
-        <script src="js/bootstrap.min.js"></script>
-        <script src="http://cdn.leafletjs.com/leaflet-0.5.1/leaflet.js"></script>
-        <script src="js/jquery.fitvids.js"></script>
-        <script src="js/jquery.sequence-min.js"></script>
-        <script src="js/jquery.bxslider.js"></script>
-        <script src="js/main-menu.js"></script>
-        <script src="js/template.js"></script>
+<jsp:include page="commonjs.jsp"></jsp:include>
         
     </body>
 </html>

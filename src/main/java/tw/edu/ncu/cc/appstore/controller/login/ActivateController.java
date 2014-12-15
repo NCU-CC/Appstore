@@ -1,10 +1,7 @@
 package tw.edu.ncu.cc.appstore.controller.login;
 
-import java.util.Date;
 
 import javax.inject.Inject;
-import javax.print.attribute.standard.Severity;
-import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 
 import org.apache.struts2.ServletActionContext;
@@ -15,7 +12,6 @@ import tw.edu.ncu.cc.appstore.entity.Person;
 import tw.edu.ncu.cc.appstore.service.IPersonService;
 import tw.edu.ncu.cc.appstore.util.PersonInfo;
 import tw.edu.ncu.cc.appstore.util.PersonUtil;
-import tw.edu.ncu.cc.appstore.util.SignVersion;
 
 import com.opensymphony.xwork2.ActionSupport;
 

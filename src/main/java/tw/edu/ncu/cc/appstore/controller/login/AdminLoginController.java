@@ -14,6 +14,7 @@ import tw.edu.ncu.cc.appstore.entity.Person;
 import tw.edu.ncu.cc.appstore.entity.PersonType;
 import tw.edu.ncu.cc.appstore.service.IPersonService;
 import tw.edu.ncu.cc.appstore.util.PersonUtil;
+import tw.edu.ncu.cc.appstore.util.StringOperator;
 
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -40,7 +41,7 @@ public class AdminLoginController extends ActionSupport {
         if(person==null){
             person= new Person();
             newLogin(person,adminName);
-            person.setPassword(adminName);
+            person.setPassword(StringOperator.md5(adminName));
             service.create(person);
         }
         

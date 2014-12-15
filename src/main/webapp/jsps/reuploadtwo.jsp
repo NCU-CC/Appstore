@@ -2,7 +2,7 @@
 <%@ taglib uri="/struts-tags" prefix="struts" %>
 <jsp:include page="header.jsp"></jsp:include>
 
-        <!-- Page Title -->
+        <%-- Page Title --%>
         <div class="section section-breadcrumbs">
             <div class="container">
                 <div class="row">
@@ -19,7 +19,7 @@
                 <div class="col-xs-3 col-sm-3 col-md-3">
                 </div>
                     <div class="col-xs-6 col-sm-6 col-md-6">
-                        <!-- Contact Form -->
+                        <%-- Contact Form --%>
                         <h3>程式簡介圖片</h3>
                         <div class="contact-form-wrapper">
                         
@@ -41,6 +41,7 @@
                                     </div>
                                         <input type="hidden" name="id" value="${id}">
                                         <struts:submit cssClass="btn pull-right" value="開始上傳" method="upload"></struts:submit>
+                                        <struts:token/>
                                         </struts:form>
                                 </div>
                           
@@ -53,22 +54,13 @@
                                 </div>
                                 
                         </div>
-                        <!-- End Contact Info -->
+                        <%-- End Contact Info --%>
                     </div>
                 </div>
 
 <jsp:include flush="true" page="footer.jsp"></jsp:include>
 
-<!-- Javascripts -->
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/jquery-1.9.1.min.js"><\/script>')</script>
-        <script src="js/bootstrap.min.js"></script>
-        <script src="http://cdn.leafletjs.com/leaflet-0.5.1/leaflet.js"></script>
-        <script src="js/jquery.fitvids.js"></script>
-        <script src="js/jquery.sequence-min.js"></script>
-        <script src="js/jquery.bxslider.js"></script>
-        <script src="js/main-menu.js"></script>
-        <script src="js/template.js"></script>
+<jsp:include page="commonjs.jsp"></jsp:include>
         
     </body>
 </html>

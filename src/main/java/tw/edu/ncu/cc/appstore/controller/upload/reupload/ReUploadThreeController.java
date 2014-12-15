@@ -24,7 +24,6 @@ import tw.edu.ncu.cc.appstore.entity.ProductState;
 import tw.edu.ncu.cc.appstore.entity.ProductStateEnum;
 import tw.edu.ncu.cc.appstore.service.IPersonService;
 import tw.edu.ncu.cc.appstore.service.IProductStateService;
-import tw.edu.ncu.cc.appstore.service.IService;
 import tw.edu.ncu.cc.appstore.util.FilePath;
 import tw.edu.ncu.cc.appstore.util.PersonInfo;
 import tw.edu.ncu.cc.appstore.util.PersonUtil;
@@ -114,13 +113,13 @@ public class ReUploadThreeController extends ActionSupport{
             filesname1 = saveFile(apk, apkFileName.trim().split("\\.")[1]);
             product.setFilePath(filesname1);
         } catch (Exception e) {
-            e.printStackTrace();            
+            filesname1 = null;            
         }
         try {            
             filesname2 = saveFile(sourceCode, sourceCodeFileName.trim().split("\\.")[1]);           
             product.setSourceCodePath(filesname2);
         } catch (Exception e) {
-            e.printStackTrace();            
+            filesname2 = null;     
         }
                         
         product.setAppleStore(appleStore);

@@ -16,7 +16,7 @@ import org.apache.commons.io.IOUtils;
 import org.springframework.stereotype.Component;
 
 @Component
-public class OpenIDManager {
+public class OpenIDManager {    
     private static OpenIDSetting setting;
     private static final String CHARSET = "UTF-8";
     private static final String CORRECTRESPONE = "is_valid:true";
@@ -40,16 +40,20 @@ public class OpenIDManager {
             if (isResultTrue(result)) {
                 return true;
             }
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (IOException e) {
+            return false;
         }
         return false;
     }
     
+    @SuppressWarnings("rawtypes")
     public String getIdentityID(HttpServletRequest request){
-        Map<String, String> re = convertMapToStringMap(request.getParameterMap());
-        return getIDFromURL(re.get("openid.identity"));
-        
+        Map map =request.getParameterMap();
+        if(map!=null){
+            Map<String, String> re = convertMapToStringMap(map);
+            return getIDFromURL(re.get("openid.identity"));
+        }
+        return null;        
     }
     private String getIDFromURL(String url){
         return url.split("user/")[1];
@@ -78,14 +82,17 @@ public class OpenIDManager {
     private String getQueryStringFromRequest(HttpServletRequest request) throws UnsupportedEncodingException{
         StringBuffer tmp = new StringBuffer();
         Map map =request.getParameterMap();
-        Set keys = map.keySet();
-        for(Object keyObject : keys){
-            String key = (String) keyObject;
-            if(!key.equals("openid.ns") && !key.equals("openid.mode") ){
-                tmp.append("&").append(key).append("=").append(  getEncodedString( ((String [])map.get(key))[0] ) );
+        if(map!=null){
+            Set keys = map.keySet();
+            for(Object keyObject : keys){
+                String key = (String) keyObject;
+                if(!key.equals("openid.ns") && !key.equals("openid.mode") ){
+                    tmp.append("&").append(key).append("=").append(  getEncodedString( ((String [])map.get(key))[0] ) );
+                }
             }
+            return tmp.toString();
         }
-        return tmp.toString();
+        return null;
     }
 
     private String getEncodedString(String originalString) throws UnsupportedEncodingException{
@@ -99,8 +106,20 @@ public class OpenIDManager {
     private String getResultFromUrl(URL obj) throws IOException {
         HttpURLConnection con = (HttpURLConnection) obj.openConnection();
         con.setRequestMethod("GET");
-        InputStream inputStream = con.getInputStream();
-        String text = IOUtils.toString(inputStream, CHARSET);
+        InputStream inputStream=null;
+        String text=null;
+        try{
+            inputStream = con.getInputStream();
+            text = IOUtils.toString(inputStream, CHARSET);
+        }finally{
+            if(inputStream!=null){
+                try{
+                    inputStream.close();
+                    }catch(IOException e){
+                        return text;
+                    }
+            }
+        }        
         return text;
     }
 

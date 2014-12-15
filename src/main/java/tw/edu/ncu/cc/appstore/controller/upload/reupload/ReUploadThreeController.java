@@ -221,7 +221,7 @@ public class ReUploadThreeController extends ActionSupport{
         try{
             fis =  new FileInputStream(filename);
         byte[] buffer = new byte[1024];
-        MessageDigest complete = MessageDigest.getInstance("SHA-512");
+        MessageDigest complete = MessageDigest.getInstance("SHA-256");
         int numRead;
 
         do {

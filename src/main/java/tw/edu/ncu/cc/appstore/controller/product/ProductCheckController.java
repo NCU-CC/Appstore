@@ -6,7 +6,8 @@ import javax.inject.Inject;
 
 import org.apache.struts2.ServletActionContext;
 import org.springframework.context.annotation.Scope;
-import org.springframework.stereotype.Controller;
+import org.springframework.stereotype.Component;
+
 
 
 import tw.edu.ncu.cc.appstore.controller.TokenBasisController;
@@ -18,8 +19,7 @@ import tw.edu.ncu.cc.appstore.entity.ProductStateEnum;
 import tw.edu.ncu.cc.appstore.service.IProductStateService;
 import tw.edu.ncu.cc.appstore.util.PersonInfo;
 import tw.edu.ncu.cc.appstore.util.PersonUtil;
-
-@Controller
+@Component
 @Scope("prototype")
 public class ProductCheckController extends TokenBasisController{
     private static final long serialVersionUID = 1L;

@@ -6,7 +6,7 @@ import java.util.List;
 import javax.inject.Inject;
 
 import org.springframework.context.annotation.Scope;
-import org.springframework.stereotype.Controller;
+import org.springframework.stereotype.Component;
 
 import tw.edu.ncu.cc.appstore.entity.Product;
 import tw.edu.ncu.cc.appstore.entity.ProductState;
@@ -14,8 +14,7 @@ import tw.edu.ncu.cc.appstore.entity.ProductStateEnum;
 import tw.edu.ncu.cc.appstore.service.IProductStateService;
 
 import com.opensymphony.xwork2.ActionSupport;
-
-@Controller
+@Component
 @Scope("prototype")
 public class ProductListController extends ActionSupport{
     private static final long serialVersionUID = 1L;

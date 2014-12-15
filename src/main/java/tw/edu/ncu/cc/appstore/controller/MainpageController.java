@@ -1,11 +1,11 @@
 package tw.edu.ncu.cc.appstore.controller;
 
 import org.springframework.context.annotation.Scope;
-import org.springframework.stereotype.Controller;
+import org.springframework.stereotype.Component;
 
 import com.opensymphony.xwork2.ActionSupport;
 
-@Controller
+@Component
 @Scope("prototype")
 public class MainpageController extends ActionSupport {
     private static final long serialVersionUID = 1L;

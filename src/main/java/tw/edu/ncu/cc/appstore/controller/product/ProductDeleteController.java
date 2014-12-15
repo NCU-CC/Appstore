@@ -6,7 +6,7 @@ import javax.inject.Inject;
 
 import org.apache.struts2.ServletActionContext;
 import org.springframework.context.annotation.Scope;
-import org.springframework.stereotype.Controller;
+import org.springframework.stereotype.Component;
 
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -17,7 +17,7 @@ import tw.edu.ncu.cc.appstore.service.IProductStateService;
 import tw.edu.ncu.cc.appstore.util.PersonInfo;
 import tw.edu.ncu.cc.appstore.util.PersonUtil;
 
-@Controller
+@Component
 @Scope("prototype")
 public class ProductDeleteController extends ActionSupport{
     private static final long serialVersionUID = 1L;

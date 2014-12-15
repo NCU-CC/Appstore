@@ -15,7 +15,7 @@ import javax.servlet.http.HttpSession;
 
 import org.apache.struts2.ServletActionContext;
 import org.springframework.context.annotation.Scope;
-import org.springframework.stereotype.Controller;
+import org.springframework.stereotype.Component;
 
 import tw.edu.ncu.cc.appstore.entity.Product;
 import tw.edu.ncu.cc.appstore.entity.ProductState;
@@ -25,7 +25,7 @@ import tw.edu.ncu.cc.appstore.util.PersonInfo;
 import tw.edu.ncu.cc.appstore.util.PersonUtil;
 
 import com.opensymphony.xwork2.ActionSupport;
-@Controller
+@Component
 @Scope("prototype")
 public class ReUploadTwoController extends ActionSupport{
     private static final long serialVersionUID = 1L;

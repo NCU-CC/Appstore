@@ -19,8 +19,9 @@ public class StringOperator {
           for (int i=0; i < barr.length; i++) {sb.append(byte2Hex(barr[i]));}
           String hex=sb.toString();
           md5=hex.toUpperCase(); //一律轉成大寫
-          }
-        catch(NoSuchAlgorithmException e) {e.printStackTrace();}
+          }catch(NoSuchAlgorithmException e) {
+            md5=null;
+        }
         return md5;
         }
       public static String byte2Hex(byte b) {

@@ -149,19 +149,21 @@ public class ReUploadThreeController extends ActionSupport{
                 }
                 
                 Date date = new Date();
-                if(date!=null){
+                
                 product.setDateCreated(date);
                 product.setDateChanged(date);
                 product.setState(ProductStateEnum.UNCHECKED.toString());
                 product.getCategory().add(ProductCategory.NONOFFICIAL.toString());
+                if(date!=null){
                 productState.setLastChanged(date);
+                }  
                 productState.getAllProducts().add(product);
                 productState.setState(ProductStateEnum.UNCHECKED.toString());
 //                person.getProducts().add(productState);
                 service.save(person);
 //                serivceP.save(productState);
                 return SUCCESS;
-                }                
+                              
             }
         }
         

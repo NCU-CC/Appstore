@@ -183,7 +183,8 @@ public class ReUploadThreeController extends ActionSupport{
         if(saved.exists()){
             return (md5+"."+end);
         }
-        if(saved.getParentFile().mkdirs()){
+        saved.getParentFile().mkdirs();
+            if(saved.getParentFile().exists()){
         try {
             ins = new FileInputStream(file);
             try{

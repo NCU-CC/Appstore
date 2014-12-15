@@ -19,13 +19,12 @@ public class UploadFileController extends ActionSupport{
     private static final String PATH = FilePath.PATH;
     private InputStream inputStream;
     private String fileName;
-    private long contentLength;
-    
-    private String folder;
-    
+    private long contentLength;    
+    private String folder;    
     
     public String execute() throws FileNotFoundException {        
-        File fileToDownload = new File(PATH+"upload"+File.separator+folder+File.separator+fileName); 
+        String path =PATH+"upload"+File.separator+folder+File.separator+fileName;
+        File fileToDownload = new File(path); 
         inputStream = new FileInputStream(fileToDownload);
         fileName = fileToDownload.getName();
         contentLength = fileToDownload.length();         
@@ -42,7 +41,7 @@ public class UploadFileController extends ActionSupport{
         return fileName;
     }
     public void setFileName(String fileName) {
-        this.fileName = fileName.split(File.separator)[0];
+        this.fileName=fileName.replace(File.separatorChar, ' ');
     }
     public long getContentLength() {
         return contentLength;
@@ -55,6 +54,6 @@ public class UploadFileController extends ActionSupport{
     }
 
     public void setFolder(String folder) {
-        this.folder = folder.split(File.separator)[0];
+        this.folder = folder;
     }
 }

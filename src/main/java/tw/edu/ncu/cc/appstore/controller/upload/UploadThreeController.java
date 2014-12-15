@@ -127,15 +127,16 @@ public class UploadThreeController extends ActionSupport{
         String md5="";
         InputStream ins = null;
         OutputStream ous = null;
-        try {
         md5 = getMD5Checksum(file);
 //        File saved = new File(ServletActionContext.getServletContext().getRealPath("upload/code"),(md5+"."+end));    
         File saved = new File(PATH+"upload"+File.separator+"code"+File.separator+(md5+"."+end));  
         if(saved.exists()){
             return (md5+"."+end);
         }
-            saved.getParentFile().mkdirs();
+        if(saved.getParentFile().mkdirs()){
+            try{
             ins = new FileInputStream(file);
+            try{
             ous = new FileOutputStream(saved);
             
             byte [] b = new byte[1024];
@@ -143,26 +144,32 @@ public class UploadThreeController extends ActionSupport{
             while((len=ins.read(b))!= -1){
                 ous.write(b,0,len);
             }
-        }finally {
-            try{
-                if (ous != null){
+        }finally{
+            if (ous != null){
+                try{
                     ous.close();
+                }catch(IOException e){
+                    md5="";
                 }
-                if(ins!=null){
-                    ins.close();
-                }
-            }catch(IOException e){
-                return (md5+"."+end);
             }
         }
+    }finally {                
+            if(ins!=null){
+                try{
+                    ins.close();
+                }catch(IOException e){
+                    md5="";
+                }
+            }
+    }}
         return (md5+"."+end);
     }
     
     public static byte[] createChecksum(File filename) throws NoSuchAlgorithmException, IOException  {
-        InputStream fis=null;
+        InputStream fis =  null;
+        byte[] buffer22=null;
         try{
-        fis =  new FileInputStream(filename);
-
+            fis =  new FileInputStream(filename);
         byte[] buffer = new byte[1024];
         MessageDigest complete = MessageDigest.getInstance("SHA-512");
         int numRead;
@@ -173,18 +180,18 @@ public class UploadThreeController extends ActionSupport{
                 complete.update(buffer, 0, numRead);
             }
         } while (numRead != -1);
-        return complete.digest();
+        buffer22=complete.digest();
+        
         }finally{
             if(fis!=null){
                 try{
-                fis.close();
+                    fis.close();
                 }catch(IOException e){
-                    return null;
+                    buffer22=null;
                 }
             }
         }
-        
-        
+        return buffer22;
     }
 
     public static String getMD5Checksum(File filename) throws NoSuchAlgorithmException, IOException  {

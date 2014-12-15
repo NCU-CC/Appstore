@@ -33,17 +33,17 @@ public class OpenIDManager {
     }
     
     public boolean checkAuthentication(HttpServletRequest request) {
-        
+        boolean flag= false;
         try {
             String checkUrl = createCheckUrl(request);
             String result =getResultFromUrl(new URL(checkUrl));
             if (isResultTrue(result)) {
-                return true;
+                flag= true;
             }
         } catch (IOException e) {
-            return false;
+            flag= false;
         }
-        return false;
+        return flag;
     }
     
     @SuppressWarnings("rawtypes")
@@ -116,7 +116,7 @@ public class OpenIDManager {
                 try{
                     inputStream.close();
                     }catch(IOException e){
-                        return text;
+                        text=null;
                     }
             }
         }        

@@ -14,6 +14,7 @@ public class OpenIDSettingLoader {
         ClassLoader classloader = Thread.currentThread()
                 .getContextClassLoader();
         InputStream is=null;
+        OpenIDSetting ois = null;
         try{
             is = classloader.getResourceAsStream(file);
             Properties prop = new Properties();
@@ -22,15 +23,16 @@ public class OpenIDSettingLoader {
             } catch (IOException e) {
                 throw new OpenIDException("reading openid setting error");
             }
-            return new OpenIDSetting(prop);
+            ois= new OpenIDSetting(prop);
         }finally{
             if(is!=null){
                 try {
                     is.close();
                 } catch (IOException e) {
-                    return null;
+                    ois= null;
                 }
             }
         }
+        return ois;
     }
 }

@@ -56,7 +56,7 @@
 									</div>
 									<div class="col-sm-3">
 										<label class="checkbox inline">
-										  <input type="checkbox" name="parent" value="true"> 家長
+										  <input type="checkbox" name="teacher" value="true"> 教職員
 										</label>
                                     </div>
                                 </div>

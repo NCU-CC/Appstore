@@ -42,7 +42,7 @@ public class ProductListController extends ActionSupport{
                     if(group == null || group.length()==0){
                         productList.add(psp);
                         productsId.add(ps.getId());
-                    }else if(psp.getUserGroup().contains(group)){
+                    }else if(psp.getUserGroup().contains(group) || psp.getCategory().contains(group) ){
                             productList.add(psp);
                             productsId.add(ps.getId());                        
                     }

@@ -119,13 +119,15 @@ public class ReUploadThreeController extends ActionSupport{
         }catch(IOException e2){
             filesname1=null;
         }
-        try {            
-            filesname2 = saveFile(sourceCode, sourceCodeFileName.trim().split("\\.")[1]);           
-            product.setSourceCodePath(filesname2);
-        } catch (NoSuchAlgorithmException e1) {                        
-            filesname2=null;
-        }catch(IOException e2){
-            filesname2=null;
+        if(sourceCode!=null && sourceCodeFileName!=null && sourceCodeFileName.trim().length()>0){
+            try {            
+                filesname2 = saveFile(sourceCode, sourceCodeFileName.trim().split("\\.")[1]);           
+                product.setSourceCodePath(filesname2);
+            } catch (NoSuchAlgorithmException e1) {                        
+                filesname2=null;
+            }catch(IOException e2){
+                filesname2=null;
+            }
         }
                         
         product.setAppleStore(appleStore);

@@ -33,7 +33,7 @@ public class ReUploadOneController extends ActionSupport{
     private String simpleIntro;
     private boolean tour; 
     private boolean student;
-    private boolean parent;
+    private boolean teacher;
     private String introduction;
     private String authorName;
     private String authorPhone;
@@ -103,8 +103,8 @@ public class ReUploadOneController extends ActionSupport{
         if(student){
             list.add(UserGroupEnum.STUDENT.toString());
         }
-        if(parent){
-            list.add(UserGroupEnum.PARENT.toString());
+        if(teacher){
+            list.add(UserGroupEnum.TEACHER.toString());
         }
         tmpProduct.setUserGroup(list);
 //        tmpProduct.setAuthor(author);
@@ -117,7 +117,7 @@ public class ReUploadOneController extends ActionSupport{
         }else if(simpleIntro==null || simpleIntro.length()>50 || simpleIntro.length()<=0){
             errorState="true";
             errorMessage="APP簡介需介於1~50個字元";
-        }else if(! (tour | student | parent)){
+        }else if(! (tour | student | teacher)){
             errorState="true";
             errorMessage="分類至少需點擊一個";
         }else if(introduction==null || introduction.length()>3000 || introduction.length()<=0){
@@ -155,11 +155,11 @@ public class ReUploadOneController extends ActionSupport{
     public void setStudent(boolean student) {
         this.student = student;
     }
-    public boolean isParent() {
-        return parent;
+    public boolean isTeacher() {
+        return teacher;
     }
-    public void setParent(boolean parent) {
-        this.parent = parent;
+    public void setTeacher(boolean parent) {
+        this.teacher = parent;
     }
     public String getIntroduction() {
         return introduction;

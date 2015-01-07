@@ -30,7 +30,6 @@
 		                            <div class="portfolio-info">
 		                                <ul>
 		                                    <li class="portfolio-project-name">${chineseName }</li>
-		                                    <li>學生相關 & 選課相關 </li>
 		                                    <li>作者: ${authorName }</li>
 		                                    <li class="read-more"><a href="product?id=${productsId[productSize-status.count]}" class="btn">Read more</a></li>
 		                                </ul>

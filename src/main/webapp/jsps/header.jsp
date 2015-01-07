@@ -9,7 +9,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Appstore for NCU</title>
+        <title>App Store for NCU</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
 
@@ -43,18 +43,18 @@
                             <a href="/appstore">首頁</a>
                         </li>
                         <li>
-                            <a href="<struts:url action="allproduct"/>">總覽APP</a>
+                            <a href="<struts:url action="allproduct"/>">總覽App</a>
                         </li>
                         
                         
                         <struts:if test="#session.personInfo != null && #session.personInfo.type == 'ADMIN'">
                         <li class="has-submenu">
-                            <a href="#">管理APP</a>
+                            <a href="#">管理App</a>
                             <div class="mainmenu-submenu">
                                 <div class="mainmenu-submenu-inner"> 
                                        
                                     <div>
-                                        <h4>查看APP申請列表</h4>
+                                        <h4>查看App申請列表</h4>
                                         <ul>
                                             <struts:url action="checklist" var="uncheckedPage">
                                                 <struts:param name="wantState" >UNCHECKED</struts:param>
@@ -68,11 +68,11 @@
                                             <struts:url action="checklist" var="checkedPage">
                                                 <struts:param name="wantState" >CHECKED</struts:param>
                                             </struts:url>
-                                            <li><a href=" <struts:url action="checklist"/> ">查看所有APP申請</a></li>
-                                            <li><a href=" <struts:property value="#uncheckedPage" /> ">查看所有待檢查APP申請</a></li>
-                                            <li><a href=" <struts:property value="#checkingPage" /> ">查看所有檢查中APP申請</a></li>
-                                            <li><a href=" <struts:property value="#checkedPage" /> ">查看所有檢查成功APP申請</a></li>
-                                            <li><a href=" <struts:property value="#failPage" /> ">查看所有檢查失敗APP申請</a></li>
+                                            <li><a href=" <struts:url action="checklist"/> ">查看所有App申請</a></li>
+                                            <li><a href=" <struts:property value="#uncheckedPage" /> ">查看所有待檢查App申請</a></li>
+                                            <li><a href=" <struts:property value="#checkingPage" /> ">查看所有檢查中App申請</a></li>
+                                            <li><a href=" <struts:property value="#checkedPage" /> ">查看所有檢查成功App申請</a></li>
+                                            <li><a href=" <struts:property value="#failPage" /> ">查看所有檢查失敗App申請</a></li>
                                         </ul>
                                         
                                     </div>

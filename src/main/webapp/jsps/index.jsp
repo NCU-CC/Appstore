@@ -10,9 +10,9 @@
 					<%-- Slide 1 --%>
 					<li class="bg4">
 						<%-- Slide Title --%>
-						<h2 class="title">NCU AppStore</h2>
+						<h2 class="title">NCU App Store</h2>
 						<%-- Slide Text --%>
-						<h3 class="subtitle">NCU AppStore是中央大學App的統合網站，透過此網站您可以掌握最新的中央大學App</h3>
+						<h3 class="subtitle">NCU App Store 是相當安全的，我們全程透過 ssl 加密來傳送屬於您個人資料的部份。您不需要當心您的資料被竊取，若您在使用上屬於您個人資料時感覺有問題，您可以利用這裡的說明來解除該 App 應用程式的允許權限。</h3>
 						<%-- Slide Image --%>
 						<img class="slide-img" src="img/homepage-slider/slide1.png" alt="Slide 1" />
 					</li>
@@ -22,7 +22,7 @@
 						<%-- Slide Title --%>
 						<h2 class="title">App</h2>
 						<%-- Slide Text --%>
-						<h3 class="subtitle">我們的App提供各式各樣的服務，現階段NCUAPP.只提供course和location的APP，在將來我們我提供更多服務</h3>
+						<h3 class="subtitle">我們的 App 將會提供各式各樣的服務，現階段 NCU App Store 只提供"學生社團活動"，"課表查詢"，"校園公車"，"宿網流量" 和 "校園地圖導覽"的 App，在將來我們我提供更多服務。</h3>
 						<%-- Slide Image --%>
 						<img class="slide-img" src="img/homepage-slider/slide2.png" alt="Slide 2" />
 					</li>
@@ -30,9 +30,9 @@
 					<%-- Slide 3 --%>
 					<li class="bg1">
 						<%-- Slide Title --%>
-						<h2 class="title">Security</h2>
+						<h2 class="title">開發的 App</h2>
 						<%-- Slide Text --%>
-						<h3 class="subtitle">NCUAPP.是相當安全的，我們全程透過ssl加密來傳送資料。不需要當心您的資料被竊取。</h3>
+						<h3 class="subtitle">NCU App Store 是中央大學 App 的統合網站，希望透過此網站您可以掌握最新的中央大學 App，也希望您有自己開發的 App 時，也可以透過我們幫您傳播出去。</h3>
 						<%-- Slide Image --%>
 						<img class="slide-img" src="img/homepage-slider/slide3.png" alt="Slide 3" />
 					</li>
@@ -49,29 +49,7 @@
         </div>
         <%-- End Homepage Slider --%>
 
-		<%-- Press Coverage --%>
-        <div class="section">
-	    	<div class="container">
-				<div class="row">
-					<div class="col-md-4 col-sm-6">
-						<div class="in-press press-wired">
-							<a href="#">NCU AppStore是中央大學App的統合網站，透過此網站您可以掌握最新的中央大學App</a>
-						</div>
-					</div>
-					<div class="col-md-4 col-sm-6">
-						<div class="in-press press-mashable">
-							<a href="#">我們的App提供各式各樣的服務，現階段NCUAPP.只提供course和location的APP，在將來我們我提供更多服務</a>
-						</div>
-					</div>
-					<div class="col-md-4 col-sm-6">
-						<div class="in-press press-techcrunch">
-							<a href="#">NCUAPP.是相當安全的，我們全程透過ssl加密來傳送資料。不需要當心您的資料被竊取。</a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<%-- Press Coverage --%>
+		
 
 		<%-- Services --%>
         <div class="section">
@@ -105,11 +83,33 @@
                                                 <struts:param name="group" >PARENT</struts:param>
                                             </struts:url>
 		        			<img src="img/service-icon/box.png" alt="Service 3">
-		        			<h3>家長專區</h3>
-		        			<p>方便的APP使您得知學子與學校的最新消息</p>
+		        			<h3>教職員專區</h3>
+		        			<p>方便的App使您得知學子與學校的最新消息</p>
 		        			<a href="<struts:property value="#parentPage" />" class="btn">Read more</a>
 		        		</div>
 	        		</div>
+	        		<div class="col-md-4 col-sm-6">
+                        <div class="service-wrapper">
+                                            <struts:url action="allproduct" var="parentPage">
+                                                <struts:param name="group" >PARENT</struts:param>
+                                            </struts:url>
+                            <img src="img/service-icon/diamond.png" alt="Service 3">
+                            <h3>計中官方專區</h3>
+                            <p>計中官方專區</p>
+                            <a href="<struts:property value="#parentPage" />" class="btn">Read more</a>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="service-wrapper">
+                                            <struts:url action="allproduct" var="parentPage">
+                                                <struts:param name="group" >PARENT</struts:param>
+                                            </struts:url>
+                            <img src="img/service-icon/chat.png" alt="Service 3">
+                            <h3>非計中官方專區</h3>
+                            <p>非計中官方專區</p>
+                            <a href="<struts:property value="#parentPage" />" class="btn">Read more</a>
+                        </div>
+                    </div>
 	        	</div>
 	        </div>
 	    </div>
@@ -121,7 +121,7 @@
 				<div class="row">
 					<div class="col-md-12">
 						<div class="calltoaction-wrapper">
-							<h3>總攬所有的APP</h3> <a href="allproduct" class="btn btn-orange">進入!</a>
+							<h3>總攬所有的App</h3> <a href="allproduct" class="btn btn-orange">進入!</a>
 						</div>
 					</div>
 				</div>

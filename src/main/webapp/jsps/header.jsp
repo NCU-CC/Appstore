@@ -38,7 +38,7 @@
                 
                 <nav id="mainmenu" class="mainmenu">
                     <ul>
-                        <li class="logo-wrapper"><a href="/appstore"><img src="img/mPurpose-logo.png" alt="Multipurpose Twitter Bootstrap Template"></a></li>
+                        <li class="logo-wrapper"><a href="/appstore"><img src="<c:url value='/img/mPurpose-logo.png'/>" alt="Multipurpose Twitter Bootstrap Template"></a></li>
                         <li>
                             <a href="/appstore">首頁</a>
                         </li>
@@ -81,6 +81,26 @@
                             </div><%-- /mainmenu-submenu --%>
                         </li>
                         </struts:if>
+                        
+                        
+                        <li class="has-submenu">
+                            <a href="#">提案相關</a>
+                            <div class="mainmenu-submenu">
+                                <div class="mainmenu-submenu-inner"> 
+                                       
+                                    <div>
+                                        <h4>提案相關列表</h4>
+                                        <ul>
+                                            <li><a href=" <struts:url action="propose"/> ">提案說明</a></li>                                            
+                                            <li><a href='<c:url value='/doc/proposal_exp.docx'/>'>提案範例</a></li>
+                                            <li><a href="<c:url value='/doc/pre_list.docx'/>">APP需求LIST</a></li>
+                                        </ul>
+                                        
+                                    </div>
+                                    
+                                </div><%-- /mainmenu-submenu-inner --%>
+                            </div><%-- /mainmenu-submenu --%>
+                        </li>
                         
                         
                         <li>

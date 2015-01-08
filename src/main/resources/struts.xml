@@ -29,6 +29,9 @@
         <action name="terms" class="">
             <result name="success">jsps/terms.jsp</result>
         </action>
+        <action name="propose" class="">
+            <result name="success">jsps/propose.jsp</result>
+        </action>
         <action name="allproduct" class="productListController">
             <result name="success">jsps/productlist.jsp</result>
             <result name="error">jsps/errormessage.jsp</result>

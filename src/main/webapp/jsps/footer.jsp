@@ -6,7 +6,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <div class="footer-copyright">&copy; 2014 NCUCC. All rights reserved. <a href="<struts:url action="admin" />">管理登入</a></div>
+                        <div class="footer-copyright">&copy; 2014 NCUCC. All rights reserved.  <a href="<struts:url action="terms" />">服務條款</a>   <a href="<struts:url action="admin" />">管理登入</a></div>
                     </div>
                 </div>
             </div>

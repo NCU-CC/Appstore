@@ -16,6 +16,7 @@
 		<hibernate.version>4.1.4.Final</hibernate.version>
 		<struts2.version>2.3.4</struts2.version>
 		<jdbc.username>appstore</jdbc.username>
+		<log4j.version>1.2.17</log4j.version>
 	</properties>
 
 	<dependencies>
@@ -141,7 +142,15 @@
 		    <groupId>jstl</groupId>
 		    <artifactId>jstl</artifactId>
 		    <version>1.2</version>
+		</dependency>		
+		<dependency>
+		    <groupId>log4j</groupId>
+		    <artifactId>log4j</artifactId>
+		    <version>${log4j.version}</version>
 		</dependency>
+
+
+	
 				
 	</dependencies>
 	

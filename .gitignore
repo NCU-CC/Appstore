@@ -8,6 +8,7 @@
 
 dataAccessDAO.properties
 openidSetting.properties
+log4j.properties
 
 # Always ignore these directories/files
 target

@@ -9,6 +9,7 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 import tw.edu.ncu.cc.appstore.service.AuthService;
+import tw.edu.ncu.cc.appstore.service.LoggerService;
 
 import com.opensymphony.xwork2.ActionSupport;
 @Component
@@ -19,17 +20,32 @@ public class AuthController extends ActionSupport {
     private HttpServletRequest request;  
     private AuthService authService; 
     private String student_id = "";
-
+    private LoggerService loggerService;
+    @Inject
+    public void setLoggerService(LoggerService loggerService) {
+        this.loggerService = loggerService;
+    }
     @Override
     public String execute() throws Exception {
         request=ServletActionContext.getRequest();
         student_id = checkOpenId();
         if (!isStringEmpty(student_id)) {     
                 login(student_id);
+                logLoginSuccess(request, student_id);
                 return SUCCESS;
         }
+        logLoginFailure(request);
         return ERROR;
     }
+    
+    private void logLoginSuccess(HttpServletRequest request,String student_id){
+        loggerService.logWithIp("member ["+ student_id +"] login success", request);
+    }
+    
+    private void logLoginFailure(HttpServletRequest request){
+        loggerService.logWithIp("admin login failure", request);
+    }
+    
     private boolean isStringEmpty(String string){
         return !(string!=null && string.length()>0);
     }

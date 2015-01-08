@@ -13,6 +13,7 @@ import org.springframework.stereotype.Component;
 import tw.edu.ncu.cc.appstore.entity.Person;
 import tw.edu.ncu.cc.appstore.entity.PersonType;
 import tw.edu.ncu.cc.appstore.service.IPersonService;
+import tw.edu.ncu.cc.appstore.service.LoggerService;
 import tw.edu.ncu.cc.appstore.util.PersonUtil;
 import tw.edu.ncu.cc.appstore.util.StringOperator;
 
@@ -25,6 +26,11 @@ public class AdminLoginController extends ActionSupport {
     private static final String adminName="admin";
     private HttpServletRequest request;
     private IPersonService<Person> service;
+    private LoggerService loggerService;
+    @Inject
+    public void setLoggerService(LoggerService loggerService) {
+        this.loggerService = loggerService;
+    }
     @Inject
     public void setService(IPersonService<Person> service) {
         this.service = service;
@@ -53,11 +59,23 @@ public class AdminLoginController extends ActionSupport {
             notNewLogin(person);
             service.save(person);
             addInSession(person);  
+            logLoginSuccess(request);
             return SUCCESS;
+        }else{
+            logLoginFailure(request);
         }
         
         return LOGIN;
     }
+    
+    private void logLoginSuccess(HttpServletRequest request){
+        loggerService.logWithIp("admin login success", request);
+    }
+    
+    private void logLoginFailure(HttpServletRequest request){
+        loggerService.logWithIp("admin login failure", request);
+    }
+    
     private void addInSession(Person person){
         PersonUtil.setPersonInf(request, person);
     }

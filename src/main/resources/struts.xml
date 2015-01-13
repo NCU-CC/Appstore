@@ -83,7 +83,7 @@
             
         <interceptor-ref name="fileUpload">
             <param name="allowedTypes">image/bmp,image/x-png,image/gif,image/jpeg,image/png</param>
-            <param name="maximumSize">2097152</param>
+            <param name="maximumSize">104857600</param>
         </interceptor-ref>
         <interceptor-ref name="tokenSession">
              <param name="includeMethods">*</param>
@@ -154,6 +154,9 @@
              <param name="includeMethods">*</param>
              <param name="excludeMethods">execute</param>
             </interceptor-ref>
+            <interceptor-ref name="fileUpload">
+              <param name="maximumSize">104857600</param>
+	    </interceptor-ref>
             <interceptor-ref name="defaultStack"></interceptor-ref>
         </action>
         

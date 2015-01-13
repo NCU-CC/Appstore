@@ -112,7 +112,7 @@ public class ReUploadThreeController extends ActionSupport{
         String filesname1;
         String filesname2;
         try {
-            filesname1 = saveFile(apk, apkFileName.trim().split("\\.")[1]);
+            filesname1 = saveFile(apk, getFileType(apkFileName.trim()));
             product.setFilePath(filesname1);
         }catch (NoSuchAlgorithmException e1) {                        
             filesname1=null;
@@ -121,7 +121,7 @@ public class ReUploadThreeController extends ActionSupport{
         }
         if(sourceCode!=null && sourceCodeFileName!=null && sourceCodeFileName.trim().length()>0){
             try {            
-                filesname2 = saveFile(sourceCode, sourceCodeFileName.trim().split("\\.")[1]);           
+                filesname2 = saveFile(sourceCode, getFileType(sourceCodeFileName.trim()));           
                 product.setSourceCodePath(filesname2);
             } catch (NoSuchAlgorithmException e1) {                        
                 filesname2=null;
@@ -255,6 +255,13 @@ public class ReUploadThreeController extends ActionSupport{
             result += Integer.toString( ( b[i] & 0xff ) + 0x100, 16).substring( 1 );
         }
         return result;
+    }
+    
+    private String getFileType(String fileName){
+        if (fileName.lastIndexOf(".") > 0) {
+            return (fileName.substring(fileName.lastIndexOf(".")+1));
+        }
+        return "non";
     }
     
     public File getApk() {

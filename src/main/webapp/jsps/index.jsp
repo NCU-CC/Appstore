@@ -61,7 +61,7 @@
                                                 <struts:param name="group" >TOUR</struts:param>
                                             </struts:url>
 		        			<img src="img/service-icon/diamond.png" alt="Service 1">
-		        			<h3>遊客專區</h3>
+		        			<h3>訪客專區</h3>
 		        			<p>這些App能夠使您在中央玩得更盡興</p>
 		        			<a href="<struts:property value="#tourPage" />" class="btn">進入專區</a>
 		        			<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#touristdeclaration">

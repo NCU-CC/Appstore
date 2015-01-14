@@ -45,8 +45,9 @@
                             <tr>
                                 <td><b>分類</b></td>
                                 <td>
-                                        <struts:iterator value="product.category">
-                                            <struts:property/> 
+                                        <struts:iterator value="product.category" id="category">
+                                            <struts:if test="%{#category == 'OFFICIAL'}">官方</struts:if> 
+                                            <struts:elseif test="%{#category == 'NONOFFICIAL'}">非官方</struts:elseif>
                                         </struts:iterator>
                                 </td>
                             </tr>

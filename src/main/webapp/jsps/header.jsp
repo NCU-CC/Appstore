@@ -84,7 +84,7 @@
                         
                         
                         <li class="has-submenu">
-                            <a href="#">提案相關</a>
+                            <a href="#">歡迎提案</a>
                             <div class="mainmenu-submenu">
                                 <div class="mainmenu-submenu-inner"> 
                                        

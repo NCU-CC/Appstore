@@ -6,8 +6,9 @@
 <%--[if gt IE 8]><%--%> <html class="no-js"> <%--<![endif]--%>
     <head>
 
-    <title>Login - Oauth Management</title>
+    <title>Login</title>
 	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="">
 	<meta name="author" content="" />
@@ -54,21 +55,21 @@ a:active {
 
 	<div id="login">
 
-		<h3>Welcome to Oauth Management</h3>
+		<h3>歡迎來到NCU App Store</h3>
 
-		<h5>Please sign in to get access.</h5>
+		<h5>點擊登入後，將使用portal登入</h5>
 
 		
 			
 			<div class="form-group">
 
 			<a href="${loginUrl}">
-				<button  id="login-btn"  class="btn btn-primary btn-block">Signin &nbsp; <i class="fa fa-play-circle"></i></button>
+				<button  id="login-btn"  class="btn btn-primary btn-block">登入 &nbsp; <i class="fa fa-play-circle"></i></button>
 				</a>
 			</div>
 
 
-		<a href="http://www.cc.ncu.edu.tw/net/password.php" class="btn btn-default">Forgot Password?</a>
+		<a href="http://www.cc.ncu.edu.tw/net/password.php" class="btn btn-default">忘記密碼?</a>
 
 	</div> <%-- /#login --%>
 

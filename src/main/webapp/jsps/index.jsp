@@ -22,7 +22,7 @@
 						<%-- Slide Title --%>
 						<h2 class="title">App</h2>
 						<%-- Slide Text --%>
-						<h3 class="subtitle">我們的 App 將會提供各式各樣的服務，現階段 NCU App Store 只提供"學生社團活動"，"課表查詢"，"校園公車"，"宿網流量" 和 "校園地圖導覽"的 App，在將來我們我提供更多服務。</h3>
+						<h3 class="subtitle">我們的 App 將會提供各式各樣的服務，現階段 NCU App Store 只提供"學生社團活動"，"課表查詢"，"校園公車"，"宿網流量" 和 "校園地圖導覽"的 App，在將來，我們會提供更多服務。</h3>
 						<%-- Slide Image --%>
 						<img class="slide-img" src="img/homepage-slider/slide2.png" alt="Slide 2" />
 					</li>

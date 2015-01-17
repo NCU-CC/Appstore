@@ -142,7 +142,7 @@
 				<div class="row">
 					<div class="col-md-12">
 						<div class="calltoaction-wrapper">
-							<h3>總攬所有的App</h3> <a href="allproduct" class="btn btn-orange">進入!</a>
+							<h3>總覽所有的App</h3> <a href="allproduct" class="btn btn-orange">進入!</a>
 						</div>
 					</div>
 				</div>

@@ -34,7 +34,7 @@
                 <div class="col-md-12">
                     <div class="panel panel-primary ">
                       <div class="panel-heading">
-                        <h3 class="panel-title">狀態更變</h3>
+                        <h3 class="panel-title">狀態變更</h3>
                       </div>
                       <div class="panel-body">
                              
@@ -103,7 +103,7 @@
                                 <td><b>更新日期:</b></td>
                                 <td>
                                     <struts:set var="productKD" value="product.dateCreated " />
-                                       <struts:date name="productKD" format="yyyy-MMM-dd" />
+                                       <struts:date name="productKD" format="yyyy-MM-dd" />
                                 </td>
                             </tr>
                             <%-- Add to Cart Button --%>

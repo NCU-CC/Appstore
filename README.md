@@ -11,11 +11,11 @@ An App Store website written in Java.
  **src/main/resources**
     - log4j.properties 
     - dataAccessDAO.properties
-    ```
-        jdbc.driver = com.mysql.jdbc.Driver
-        jdbc.url = jdbc:mysql://localhost/dbname
-        jdbc.username=xxx
-        jdbc.password=xxx
-    ```
-    - openid-setting.properties ( https://github.com/NCU-CC/OpenID-Consumer )
+        - ```jdbc.driver = com.mysql.jdbc.Driver```
+        - ```jdbc.url = jdbc:mysql://localhost/dbname```
+        - ```jdbc.username=xxx```
+        - ```jdbc.password=xxx```
+    
+    - openid-setting.properties 
+        - see https://github.com/NCU-CC/OpenID-Consumer
 

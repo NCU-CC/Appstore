@@ -71,7 +71,7 @@
                                 <td><b>更新日期:</b></td>
                                 <td>
                                     <struts:set var="productKD" value="product.dateCreated " />
-                                       <struts:date name="productKD" format="yyyy-MMM-dd" />
+                                       <struts:date name="productKD" format="yyyy-MM-dd" />
                                 </td>
                             </tr>
                             <%-- Add to Cart Button --%>

@@ -56,8 +56,10 @@ a:active {
 	<div id="login">
 
 		<h3>歡迎來到NCU App Store</h3>
+		
+		<h5>若您已經開發好了您的APP應用程式
 
-		<h5>點擊登入後，將使用portal登入</h5>
+		<h5>請點擊登入，我們將轉址至portal登入本系統</h5>
 
 		
 			

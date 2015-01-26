@@ -90,7 +90,7 @@
                                             </struts:url>
 		        			<span class="glyphicon glyphiconbig glyphicon-briefcase" aria-hidden="true"></span>
 		        			<h3>教職員專區</h3>
-		        			<p>方便的App使您得知學子與學校的最新消息</p>
+		        			<p>專屬於教職員的方便服務</p>
 		        			<a href="<struts:property value="#teacherPage" />" class="btn">進入專區</a>
 		        			<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#teacherdeclaration">
                               聲明

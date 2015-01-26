@@ -3,7 +3,7 @@
 <jsp:include page="header.jsp"></jsp:include>
 
 
-<div class="section section-breadcrumbs">
+        <div class="section section-breadcrumbs">
             <div class="container">
                 <div class="row">
                     <div class="col-md-10">
@@ -55,9 +55,9 @@
         </div>
 
 
-<jsp:include flush="true" page="footer.jsp"></jsp:include>
-
-<jsp:include page="commonjs.jsp"></jsp:include>
+		<jsp:include flush="true" page="footer.jsp"></jsp:include>
+		
+		<jsp:include page="commonjs.jsp"></jsp:include>
         
     </body>
 </html>

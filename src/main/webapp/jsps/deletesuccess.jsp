@@ -26,8 +26,8 @@
             </div>
         </div>
 
-<jsp:include flush="true" page="footer.jsp"></jsp:include>
-
-<jsp:include page="commonjs.jsp"></jsp:include>
+		<jsp:include flush="true" page="footer.jsp"></jsp:include>
+		
+		<jsp:include page="commonjs.jsp"></jsp:include>
     </body>
 </html>

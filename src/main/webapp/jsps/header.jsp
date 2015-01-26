@@ -15,13 +15,8 @@
 
         <link rel="shortcut icon" href="<c:url value='/favicon.ico'/>" type="image/x-icon" />  
         <link rel="stylesheet" href="<c:url value='/css/bootstrap.min.css'/>">
-        <link rel="stylesheet" href="<c:url value='/css/icomoon-social.css'/>">
         <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,600,800' rel='stylesheet' type='text/css'>
 
-        <link rel="stylesheet" href="<c:url value='/css/leaflet.css'/>" />
-        <%--[if lte IE 8]>
-            <link rel="stylesheet" href="<c:url value='/css/leaflet.ie.css'/>" />
-        <![endif]--%>
         <link rel="stylesheet" href="<c:url value='/css/main.css'/>">
         
         <script src="<c:url value='/js/modernizr-2.6.2-respond-1.1.0.min.js'/>"></script>

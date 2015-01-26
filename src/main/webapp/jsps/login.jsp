@@ -15,18 +15,13 @@
 		<meta name="description" content="">
 		<meta name="author" content="" />
 		
-		
-		
 		<link rel="stylesheet"
-			href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,800italic,400,600,800"
+			href="https://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,800italic,400,600,800"
 			type="text/css">
-		<link rel="stylesheet" href="./css/font-awesome.min.css" type="text/css" />
-		<link rel="stylesheet" href="./css/bootstrap.min.css" type="text/css" />
-		<link rel="stylesheet"
-			href="./js/libs/css/ui-lightness/jquery-ui-1.9.2.custom.css"
-			type="text/css" />
 		
-		<link rel="stylesheet" href="./css/App.css" type="text/css" />
+		<link rel="stylesheet" href="./css/bootstrap.min.css" type="text/css" />		
+		
+		
 		<link rel="stylesheet" href="./css/Login.css" type="text/css" />
 		
 		<link rel="stylesheet" href="./css/custom.css" type="text/css" />

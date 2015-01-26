@@ -32,7 +32,7 @@
 <h4>三、提案注意事項</h4>
      <ul>   
 <li> 提案人可參考需求所<a href='<c:url value='/doc/pre_list.docx'/>'>列舉</a>之APP應用程式列表，或自行提出任何以中央大學提供服務為出發點之應用程式亦可。</li>
-<li>若該應用會使用到校內教職員生之個人隱私資料，於議價核可後，可至<a href='https://appstore.cc.ncu.edu.tw/manage' target='_blank'>NCU OAuth</a>  網站進行必要的認證程序。</li>
+<li>若該應用會使用到校內教職員生之個人隱私資料，於議價核可後，可至 NCU OAuth 網站進行必要的認證程序。</li>
 <li>提案適用日期為104年1月1日起至同年12月31日止。</li>
 <li>議價簽約後之金額即為未來幾付之金額，以應用程式為單位，並不會參考開發人員數量。</li>
 <li>給付金額時將依學務處之<strong><a href='http://140.115.183.185/ncu7221/index.php?option=com_attachments&task=download&id=301'>國立中央大學學生工讀助學辦法 （104.01.01生效）</a></strong>，依上限分月給付。</li>

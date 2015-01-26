@@ -25,7 +25,7 @@
 		                    <div class="col-md-4 col-sm-6">
 		                        <div class="portfolio-item">
 		                            <div class="portfolio-image">
-		                                <a href="product?id=${productsId[productSize-status.count]}"><img src="upload/images?fileName=${imagePath}" alt="Project Name"></a>
+		                                <a href="product?id=${productsId[productSize-status.count]}"><img src="upload/images?fileName=${imagePath}" height="300" alt="Project Name"></a>
 		                            </div>
 		                            <div class="portfolio-info">
 		                                <ul>

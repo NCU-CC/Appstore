@@ -5,6 +5,7 @@
 .metadata
 *.launch
 .springBeans
+.tern-project
 
 dataAccessDAO.properties
 openidSetting.properties

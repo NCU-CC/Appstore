@@ -60,7 +60,7 @@
 	        			                    <struts:url action="allproduct" var="tourPage">
                                                 <struts:param name="group" >TOUR</struts:param>
                                             </struts:url>
-		        			<img src="img/service-icon/diamond.png" alt="Service 1">
+		        			<span class="glyphicon glyphiconbig glyphicon-user" aria-hidden="true"></span>
 		        			<h3>訪客專區</h3>
 		        			<p>這些App能夠使您在中央玩得更盡興</p>
 		        			<a href="<struts:property value="#tourPage" />" class="btn">進入專區</a>
@@ -74,7 +74,7 @@
 	        			                    <struts:url action="allproduct" var="studentPage">
                                                 <struts:param name="group" >STUDENT</struts:param>
                                             </struts:url>
-		        			<img src="img/service-icon/ruler.png" alt="Service 2">
+		        			<span class="glyphicon glyphiconbig glyphicon-book" aria-hidden="true"></span>
 		        			<h3>學生專區</h3>
 		        			<p>專屬於學生的方便服務</p>
 		        			<a href="<struts:property value="#studentPage" />" class="btn">進入專區</a>
@@ -88,7 +88,7 @@
 	        			                    <struts:url action="allproduct" var="teacherPage">
                                                 <struts:param name="group" >TEACHER</struts:param>
                                             </struts:url>
-		        			<img src="img/service-icon/box.png" alt="Service 3">
+		        			<span class="glyphicon glyphiconbig glyphicon-briefcase" aria-hidden="true"></span>
 		        			<h3>教職員專區</h3>
 		        			<p>方便的App使您得知學子與學校的最新消息</p>
 		        			<a href="<struts:property value="#teacherPage" />" class="btn">進入專區</a>
@@ -102,7 +102,7 @@
                                             <struts:url action="allproduct" var="officialPage">
                                                 <struts:param name="group" >OFFICIAL</struts:param>
                                             </struts:url>
-                            <img src="img/service-icon/diamond.png" alt="Service 3">
+                            <span class="glyphicon glyphiconbig glyphicon-home" aria-hidden="true"></span>
                             <h3>計中官方專區</h3>
                             <p>計中官方專區</p>
                             <a href="<struts:property value="#officialPage" />" class="btn">進入專區</a>
@@ -116,7 +116,7 @@
                                             <struts:url action="allproduct" var="nonofficialPage">
                                                 <struts:param name="group" >NONOFFICIAL</struts:param>
                                             </struts:url>
-                            <img src="img/service-icon/chat.png" alt="Service 3">
+                            <span class="glyphicon glyphiconbig glyphicon-globe" aria-hidden="true"></span>
                             <h3>非計中官方專區</h3>
                             <p>非計中官方專區</p>
                             <a href="<struts:property value="#nonofficialPage" />" class="btn">進入專區</a>

@@ -78,12 +78,14 @@
                             <tr>
                                 <td>&nbsp;</td>
                                 <td>
-                                    <struts:if test="product.filePath !=null && product.filePath != ''">
-                                        <a href="upload/code?fileName=${product.filePath}" target="_blank" class="btn btn"><i class="icon-shopping-cart icon-white"></i>直接下載</a>
-                                    </struts:if>
                                     <struts:if test="product.googlePlay !=null && product.googlePlay != ''">
                                          <a href="${product.googlePlay}" target="_blank" class="btn btn"><i class="icon-shopping-cart icon-white"></i>Google Play</a>
                                      </struts:if>
+                                     <struts:else>
+                                        <struts:if test="product.filePath !=null && product.filePath != ''">
+                                            <a href="upload/code?fileName=${product.filePath}" target="_blank" class="btn btn"><i class="icon-shopping-cart icon-white"></i>直接下載</a>
+                                        </struts:if>
+                                    </struts:else>
                                      <struts:if test="product.appleStore !=null && product.appleStore != ''">
                                          <a href="${product.appleStore}" target="_blank" class="btn btn"><i class="icon-shopping-cart icon-white"></i>Apple Store</a>
                                      </struts:if>

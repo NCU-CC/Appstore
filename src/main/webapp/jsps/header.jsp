@@ -25,6 +25,11 @@
         <link rel="stylesheet" href="<c:url value='/css/main.css'/>">
         
         <script src="<c:url value='/js/modernizr-2.6.2-respond-1.1.0.min.js'/>"></script>
+        <style type="text/css">
+			  .glyphiconbig {
+			    font-size: 4.3em;
+			}
+        </style>
     </head>
     <body>
         <%--[if lt IE 7]>

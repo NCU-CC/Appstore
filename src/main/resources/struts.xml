@@ -18,12 +18,6 @@
         <action name="" class="mainpageController">
             <result name="success">jsps/index.jsp</result>
         </action>
-        <action name="allproductSimple" class="">
-            <result name="success">jsps/product3.jsp</result>
-        </action>
-        <action name="productSimple" class="">
-            <result name="success">jsps/productdetail.jsp</result>
-        </action>
         <action name="404" class="">
             <result name="success">jsps/404.jsp</result>
         </action>
@@ -51,18 +45,12 @@
         </action>
         <action name="logined" class="afterLoginController">
             <result name="success" type="redirect">/</result>
-            <result name="input" type="redirect">active</result>
             <interceptor-ref name="defaultStack"></interceptor-ref>
         </action>
         <action name="login" class="loginController">
             <result name="success">jsps/login.jsp</result>
             <interceptor-ref name="defaultStack"></interceptor-ref>
-        </action>
-        <action name="active" class="activateController">
-            <result name="success" type="redirect">/</result>
-            <result name="input">jsps/active.jsp</result>
-            <interceptor-ref name="defaultStack"></interceptor-ref>
-        </action>
+        </action>        
         <action name="logout" class="logoutController">
             <result name="success" type="redirect">/</result>
             <interceptor-ref name="defaultStack"></interceptor-ref>

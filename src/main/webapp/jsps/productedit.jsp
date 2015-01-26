@@ -159,7 +159,6 @@
                             <%-- Tabs --%>
                             <ul class="nav nav-tabs product-details-nav">
                                 <li class="active"><a href="#tab1" data-toggle="tab">Description</a></li>
-                                <%--<li><a href="#tab2" data-toggle="tab">Specification</a></li> --%>
                             </ul>
                             <%-- Tab Content (Full Description) --%>
                             <div class="tab-content product-detail-info">
@@ -167,44 +166,6 @@
                                     <h4>Product Description</h4>
                                     <p>${product.introduction}</p>
                                 </div>
-                                <%-- Tab Content (Specification) 
-                                <div class="tab-pane" id="tab2">
-                                    <table>
-                                        <tr>
-                                            <td>Total sensor Pixels (megapixels)</td>
-                                            <td>Approx. 16.7</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Effective Pixels (megapixels)</td>
-                                            <td>Approx. 16.1</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Automatic White Balance</td>
-                                            <td>YES</td>
-                                        </tr>
-                                        <tr>
-                                            <td>White balance: preset selection</td>
-                                            <td>Daylight, Shade, Cloudy, Incandescent, Fluorescent, Flash</td>
-                                        </tr>
-                                        <tr>
-                                            <td>White balance: custom setting</td>
-                                            <td>YES</td>
-                                        </tr>
-                                        <tr>
-                                            <td>White balance: types of color temperature</td>
-                                            <td>YES (G7 to M7,15-step) (A7 to B7,15-step)</td>
-                                        </tr>
-                                        <tr>
-                                            <td>White balance bracketing</td>
-                                            <td>NO</td>
-                                        </tr>
-                                        <tr>
-                                            <td>ISO Sensitivity Setting</td>
-                                            <td>ISO100 - 25600 equivalent</td>
-                                        </tr>
-                                    </table>
-                                </div>
-                                --%>
                             </div>
                         </div>
                     </div>
@@ -213,10 +174,10 @@
             </div>
         </div>
 
-<jsp:include flush="true" page="footer.jsp"></jsp:include>
-
-<jsp:include page="commonjs.jsp"></jsp:include>
-<script src="<c:url value='/js/rails.js'/>" type="text/javascript"></script>
+		<jsp:include flush="true" page="footer.jsp"></jsp:include>
+		
+		<jsp:include page="commonjs.jsp"></jsp:include>
+		<script src="<c:url value='/js/rails.js'/>" type="text/javascript"></script>
         <script src="<c:url value='/js/data-confirm-modal.js'/>" type="text/javascript"></script>     
 
     </body>

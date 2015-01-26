@@ -2,6 +2,23 @@ body {
   margin: 80px 0;
   background-image: none;
   background-color: #333;
+  color: #444;
+  font: 13px/1.7em "Open Sans", "trebuchet ms", arial, sans-serif;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-top: 0;
+  font-family: 'Open Sans', 'trebuchet ms', arial, sans-serif;
+}
+.btn-primary {
+  color: #ffffff;
+  background-color: #0099FF;
+  border-color: #0099FF;
 }
 #login-container {
   position: relative;

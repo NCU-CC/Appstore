@@ -10,7 +10,6 @@
 </script>
 <script src="<c:url value='/js/bootstrap.min.js'/>"></script>
 <script src="http://cdn.leafletjs.com/leaflet-0.5.1/leaflet.js'/>"></script>
-<script src="<c:url value='/js/jquery.fitvids.js'/>"></script>
 <script src="<c:url value='/js/jquery.sequence-min.js'/>"></script>
 <script src="<c:url value='/js/jquery.bxslider.js'/>"></script>
 <script src="<c:url value='/js/main-menu.js'/>"></script>

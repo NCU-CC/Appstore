@@ -24,6 +24,9 @@
 			  .glyphiconbig {
 			    font-size: 4.3em;
 			}
+			.row-centered {
+			    text-align:center;
+			}
         </style>
     </head>
     <body>

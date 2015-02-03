@@ -17,5 +17,5 @@ An App Store website written in Java.
         - ```jdbc.password=xxx```
     
     - openid-setting.properties 
-        - see https://github.com/NCU-CC/OpenID-Consumer
+        - see https://github.com/NCU-CC/OpenID-Consumer/tree/master/openid-ncu-consumer
 

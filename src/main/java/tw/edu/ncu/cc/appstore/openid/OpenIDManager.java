@@ -24,7 +24,7 @@ public class OpenIDManager {
     public OpenIDManager() throws OpenIDException {
         if (setting == null) {
             setting = new OpenIDSettingLoader()
-                    .getSetting("openid.properties");
+                    .getSetting("openidSetting.properties");
         }
     }   
     

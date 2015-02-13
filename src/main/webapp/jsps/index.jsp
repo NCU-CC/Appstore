@@ -128,23 +128,7 @@
 				</div>
 			</div>
 		</div>
-		<%-- End Services --%>
-		
-		<%-- Call to Action Bar --%>
-		<div class="section section-white">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-12">
-						<div class="calltoaction-wrapper">
-							<h3>總覽所有的App</h3>
-							<a href="allproduct" class="btn btn-orange">進入!</a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<%-- End Call to Action Bar --%>
-		
+		<%-- End Services --%>	
 		
 		<!-- Modal -->
 		<div class="modal fade" id="touristdeclaration" tabindex="-1"

@@ -24,8 +24,8 @@
         <action name="terms" class="">
             <result name="success">jsps/terms.jsp</result>
         </action>
-        <action name="propose" class="">
-            <result name="success">jsps/propose.jsp</result>
+        <action name="oauth" class="">
+            <result name="success">jsps/oauth.jsp</result>
         </action>
         <action name="allproduct" class="productListController">
             <result name="success">jsps/productlist.jsp</result>

@@ -14,7 +14,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<spring.version>3.1.2.RELEASE</spring.version>
 		<hibernate.version>4.1.4.Final</hibernate.version>
-		<struts2.version>2.3.24</struts2.version>
+		<struts2.version>2.3.32</struts2.version>
 		<jdbc.username>appstore</jdbc.username>
 		<log4j.version>1.2.17</log4j.version>
 	</properties>

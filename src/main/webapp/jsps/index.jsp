@@ -8,41 +8,50 @@
 			<div id="sequence">
 				<ul class="sequence-canvas">
 					<%-- Slide 1 --%>
+					<li class="bg2">
+						<%-- Slide Title --%>
+						<h2 class="title">【公告】</h2> <%-- Slide Text --%>
+						<h3 class="subtitle">因應經濟部工業局以行動通訊資安為由，佳惠行動應用資安聯盟（<a href="https://www.mas.org.tw/">https://www.mas.org.tw/</a>），雖違背自由軟體開發精神，不得已本站僅能選擇移除 Google Play 連結，改為直接由本站下載，不便之處，深感抱歉。</h3> <%-- Slide Image --%> <img class="slide-img"
+						src="img/homepage-slider/slide4.png" alt="Slide 1" />
+					</li>
+					<%-- End Slide 1 --%>
+					<%-- Slide 2 --%>
 					<li class="bg4">
 						<%-- Slide Title --%>
 						<h2 class="title">NCU App Store</h2> <%-- Slide Text --%>
 						<h3 class="subtitle">NCU App Store 是相當安全的，我們全程透過 ssl
 							加密來傳送屬於您個人資料的部份。您不需要當心您的資料被竊取，若您在使用上屬於您個人資料時感覺有問題，您可以利用這裡的說明來解除該
 							App 應用程式的允許權限。</h3> <%-- Slide Image --%> <img class="slide-img"
-						src="img/homepage-slider/slide1.png" alt="Slide 1" />
+						src="img/homepage-slider/slide1.png" alt="Slide 2" />
 					</li>
-					<%-- End Slide 1 --%>
-					<%-- Slide 2 --%>
+					<%-- End Slide 2 --%>
+					<%-- Slide 3 --%>
 					<li class="bg3">
 						<%-- Slide Title --%>
 						<h2 class="title">App</h2> <%-- Slide Text --%>
 						<h3 class="subtitle">我們的 App 將會提供各式各樣的服務，現階段 NCU App Store
 							只提供"學生社團活動"，"課表查詢"，"校園公車"，"宿網流量" 和 "校園地圖導覽"的 App，在將來，我們會提供更多服務。</h3> <%-- Slide Image --%>
 						<img class="slide-img" src="img/homepage-slider/slide2.png"
-						alt="Slide 2" />
+						alt="Slide 3" />
 					</li>
-					<%-- End Slide 2 --%>
-					<%-- Slide 3 --%>
+					<%-- End Slide 3 --%>
+					<%-- Slide 4 --%>
 					<li class="bg1">
 						<%-- Slide Title --%>
 						<h2 class="title">開發的 App</h2> <%-- Slide Text --%>
 						<h3 class="subtitle">NCU App Store 是中央大學 App
 							的統合網站，希望透過此網站您可以掌握最新的中央大學 App，也希望您有自己開發的 App 時，也可以透過我們幫您傳播出去。</h3> <%-- Slide Image --%>
 						<img class="slide-img" src="img/homepage-slider/slide3.png"
-						alt="Slide 3" />
+						alt="Slide 4" />
 					</li>
-					<%-- End Slide 3 --%>
+					<%-- End Slide 4 --%>
 				</ul>
 				<div class="sequence-pagination-wrapper">
 					<ul class="sequence-pagination">
 						<li>1</li>
 						<li>2</li>
 						<li>3</li>
+						<li>4</li>
 					</ul>
 				</div>
 			</div>

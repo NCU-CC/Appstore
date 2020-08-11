@@ -12,7 +12,7 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<spring.version>3.1.2.RELEASE</spring.version>
+		<spring.version>5.2.8.RELEASE</spring.version>
 		<hibernate.version>4.1.4.Final</hibernate.version>
 		<struts2.version>2.3.34</struts2.version>
 		<jdbc.username>appstore</jdbc.username>
